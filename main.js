@@ -23,15 +23,16 @@ gsap.from('.hero__container__button', {
 
 
 const sliderBg = [
-  './public/assets/img/sectonImg/slider/1.png',
-  './public/assets/img/sectonImg/slider/2.png',
-  './public/assets/img/sectonImg/slider/3.png',
-  './public/assets/img/sectonImg/slider/4.png',
-  './public/assets/img/sectonImg/slider/5.png',
-  './public/assets/img/sectonImg/slider/6.png',
-  './public/assets/img/sectonImg/slider/7.png',
-  './public/assets/img/sectonImg/slider/8.png',
-  './public/assets/img/sectonImg/slider/9.png'
+  '../../../public/assets/img/sectonImg/slider/1.png',
+  '../../../public/assets/img/sectonImg/slider/1.png',
+  '../../../public/assets/img/sectonImg/slider/2.png',
+  '../../../public/assets/img/sectonImg/slider/3.png',
+  '../../../public/assets/img/sectonImg/slider/4.png',
+  '../../../public/assets/img/sectonImg/slider/5.png',
+  '../../../public/assets/img/sectonImg/slider/6.png',
+  '../../../public/assets/img/sectonImg/slider/7.png',
+  '../../../public/assets/img/sectonImg/slider/8.png',
+  '../../../public/assets/img/sectonImg/slider/9.png'
 ];
 
 function setBackgroundImages() {
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     indicatorText: ''
   });
   const hammer = new Hammer(__ms);
-  const __msTimer = 10000;
+  const __msTimer = 2000;
   let __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
 
   __ms.onmouseenter = function(e) {
