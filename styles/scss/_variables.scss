@@ -1,0 +1,32 @@
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ variables ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+// z-index system 
+$ui-index-1: 1; //for crawling elements in the total flow
+$ui-index-2: 2; //for crawling elements in the total flow
+$ui-index-3: 3; //for masks and shadows
+$ui-index-4: 4; //sidebars 
+$ui-index-5: 5; //for modal windows
+$ui-index-6: 6; //for modal windows
+
+//colors 
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$gray: rgb(152, 162, 179);
+$textGray: rgb(102, 112, 133);
+$lightGray: rgb(233, 234, 236);
+$brandColor: rgb(8, 21, 55);
+$brandColorLight: rgb(54, 59, 90);
+
+// ----------------------------------------------------------------------------------------------------------------------
+
+// other
+$borderRadiusBtn: 30px;
+$transitionDuration:  .3s;
+
+// ----------------------------------------------------------------------------------------------------------------------
+
+// @media  
+$ui-mobile: '500px';
+$ui-tablet: '1000px';
+$ui-desktop: '1200px';

@@ -1,0 +1,20 @@
+@mixin desktop() {
+  @media (max-width: $ui-desktop) {
+    @content;
+    
+  }
+  }
+  
+  @mixin tablet() {
+  @media (max-width: $ui-tablet) {
+    @content; 
+  
+  }
+  }
+  
+  @mixin mobile() {
+  @media (max-width: $ui-mobile) {
+    @content;
+  
+  }
+  }

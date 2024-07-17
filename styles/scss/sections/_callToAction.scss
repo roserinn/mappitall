@@ -1,0 +1,66 @@
+.callToAction {
+  margin: 100px 0px;
+  height: 600px;
+  position: relative;
+  overflow-y: hidden;
+
+  video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .shadow {
+    background-color: #08153777;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: inherit;
+    z-index: $ui-index-1;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 200px 0;
+    color: $white;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+
+
+    &__title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    &__text {
+      font-size: 1.1rem;
+      line-height: 28px;
+      margin-bottom: 60px;
+    }
+
+    &__button {
+      background-color: $white;
+      color: $black;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 20px 50px;
+      border-radius: $borderRadiusBtn;
+      transition: background-color $transitionDuration ease-in-out;
+      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+      text-shadow: none;
+    }
+
+    &__button:hover {
+      background-color: $brandColor;
+      color: $white;
+    }
+  }
+}

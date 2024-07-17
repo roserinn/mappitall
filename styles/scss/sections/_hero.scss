@@ -1,0 +1,87 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+
+  video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .shadow {
+    background: rgb(34, 193, 195);
+    background: -moz-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588184158) 51%, rgba(0, 0, 0, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588184158) 51%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588184158) 51%, rgba(0, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3", endColorstr="#000000", GradientType=1);
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $ui-index-2;
+  }
+
+  .galssmorfism {
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.2px);
+    -webkit-backdrop-filter: blur(5.2px);
+    border-right: 1px solid rgba(255, 255, 255, 0.111);
+    height: 100vh;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__container {
+    display: flex;
+    position: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 0 auto;
+    top: 200px;
+    width: 1200px;
+    color: $white;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+
+
+    &__subtitle {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-size: 7rem;
+      line-height: 120px;
+    }
+
+    &__text {
+      font-size: 1.2rem;
+      margin-bottom: 100px;
+    }
+
+    &__button {
+      background-color: $white;
+      color: $black;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 20px 30px;
+      border-radius: $borderRadiusBtn;
+      transition: background-color $transitionDuration ease-in-out;
+      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+      text-shadow: none;
+    }
+
+    &__button:hover {
+      background-color: $brandColor;
+      color: $white;
+    }
+
+  }
+}

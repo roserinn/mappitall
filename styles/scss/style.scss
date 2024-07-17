@@ -1,0 +1,25 @@
+@import './variables';
+@import './reset';
+@import './mixins';
+@import './media__breakpoints';
+@import './fonts';
+
+// ------------------------- sections ---------------------------
+@import './sections/header'; 
+@import './sections/hero';
+@import './sections/forWhat';
+@import './sections/callToAction';
+@import './sections/benefits';
+
+
+body {
+  font-family: "Poppins", sans-serif;
+
+}
+
+.wrapper {  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
