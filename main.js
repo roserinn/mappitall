@@ -23,16 +23,16 @@ gsap.from('.hero__container__button', {
 
 
 const sliderBg = [
-  '../../../public/assets/img/sectonImg/slider/1.png',
-  '../../../public/assets/img/sectonImg/slider/1.png',
-  '../../../public/assets/img/sectonImg/slider/2.png',
-  '../../../public/assets/img/sectonImg/slider/3.png',
-  '../../../public/assets/img/sectonImg/slider/4.png',
-  '../../../public/assets/img/sectonImg/slider/5.png',
-  '../../../public/assets/img/sectonImg/slider/6.png',
-  '../../../public/assets/img/sectonImg/slider/7.png',
-  '../../../public/assets/img/sectonImg/slider/8.png',
-  '../../../public/assets/img/sectonImg/slider/9.png'
+  './assets/img/sectonImg/slider/1.png',
+  './assets/img/sectonImg/slider/1.png',
+  './assets/img/sectonImg/slider/2.png',
+  './assets/img/sectonImg/slider/3.png',
+  './assets/img/sectonImg/slider/4.png',
+  './assets/img/sectonImg/slider/5.png',
+  './assets/img/sectonImg/slider/6.png',
+  './assets/img/sectonImg/slider/7.png',
+  './assets/img/sectonImg/slider/8.png',
+  './assets/img/sectonImg/slider/9.png'
 ];
 
 function setBackgroundImages() {
