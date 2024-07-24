@@ -1,0 +1,434 @@
+.cases {
+  &__container {
+    margin: 100px 0;
+    font-family: "Space Grotesk", sans-serif;
+    position: relative;
+
+    &__header {
+      width: 1200px;
+      margin: 0 auto 50px;
+
+      span {
+        text-transform: uppercase;
+        color: $gray;
+      }
+
+      h2 {
+        font-size: 3rem;
+        font-weight: $fontWeightBold;
+        line-height: 60px;
+        color: $brandColor;
+        width: 70%;
+      }
+    }
+
+    &__slider {
+      height: 600px;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+
+      .slide {
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      &__controls {
+        position: absolute;
+        bottom: -130px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 1200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .control {
+          position: relative;
+          cursor: pointer;
+          background-color: $white;
+          box-shadow: $boxShadow;
+          border-radius: $borderRadius;
+
+          .arrowUp {
+            display: none;
+          }
+
+          p {
+            top: 40%;
+            left: 30%;
+            text-align: center;
+            font-size: 1.8rem;
+            width: 100px;
+            line-height: 25px;
+            color: $brandColor;
+            position: absolute;
+          }
+
+          &:first-child p {
+            top: 30%;
+            left: 29%;
+          }
+
+          img {
+            opacity: 0;
+          }
+        }
+
+        .active {
+          box-shadow: $boxShadow;
+          border-radius: $borderRadius;
+          position: relative;
+
+          .arrowUp {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+          }
+
+          p {
+            top: 35%;
+            left: 30%;
+            text-align: center;
+            font-size: 1.5rem;
+            width: 100px;
+            line-height: 25px;
+            color: $white;
+            position: absolute;
+          }
+
+          &:first-child p {
+            top: 30%;
+            left: 30%;
+          }
+
+          img {
+            opacity: 1;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@include laptop() {
+  .cases {
+    &__container {
+      &__header {
+        width: 1000px;
+
+        span {
+          font-size: 1rem;
+        }
+  
+        h2 {
+          font-size: 2rem;
+          line-height: 40px;
+        }
+      }
+
+      &__slider {
+        height: 600px;
+
+        &__controls {
+          bottom: -50px;
+          width: 1000px;
+
+          .control {
+            border-radius: 20px;
+     
+            p {
+              top: 35%;
+              left: 27%;
+              text-align: center;
+              font-size: 1.5rem;
+              color: $brandColor;
+              position: absolute;
+            }
+
+            &:first-child p {
+              top: 27%;
+              left: 27%;
+              font-size: 1.5rem;
+            }
+
+            img {
+              opacity: 0;
+            }
+
+            .controlBtn {
+              width: 220px;
+            }
+          }
+
+          .active {
+            box-shadow: $boxShadow;
+            border-radius: 20px;
+            position: relative;
+
+            .arrowUp {
+              display: flex;
+              position: absolute;
+              top: 15px;
+              right: 15px;
+            }
+
+            p {
+              top: 35%;
+              left: 27%;
+              text-align: center;
+              font-size: 1.5rem;
+              color: $white;
+              position: absolute;
+            }
+
+            &:first-child p {
+              top: 27%;
+              left: 27%;
+              font-size: 1.5rem;
+            }
+
+            img {
+              opacity: 1;
+            }
+
+            .controlBtn {
+             width: 220px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .cases {
+    &__container {
+      &__header {
+        width: 500px;
+
+        span {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+          line-height: 30px;
+          width: 100%;
+        }
+      }
+
+      &__slider {
+        height: 500px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+
+        .slide {
+          video {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        &__controls {
+          position: absolute;
+          bottom: -40px;
+          left: 50%;
+          transform: translate(-50%);
+          width: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .control {
+            position: relative;
+            cursor: pointer;
+
+            .arrowUp {
+              display: none;
+            }
+
+            p {
+              top: 31%;
+              left: 8%;
+              text-align: center;
+              font-size: 1rem;
+              line-height: 20px;
+              color: $brandColor;
+              position: absolute;
+            }
+
+            &:first-child p {
+              top: 18%;
+              left: 10%;
+              font-size: 1rem;
+            }
+
+            img {
+              opacity: 0;
+            }
+
+            .controlBtn {
+              width: 120px;
+            }
+          }
+
+          .active {
+            box-shadow: $boxShadow;
+            border-radius: $borderRadius;
+            position: relative;
+
+            .arrowUp {
+              width: 10px;
+              display: flex;
+              position: absolute;
+              top: 10px;
+              right: 10px;
+            }
+
+            p {
+              top: 30%;
+              left: 8%;
+              text-align: center;
+              font-size: 1rem;
+              line-height: 20px;
+              color: $white;
+              position: absolute;
+            }
+
+            &:first-child p {
+              top: 20%;
+              ;
+            }
+
+            img {
+              opacity: 1;
+            }
+
+            .controlBtn {
+              width: 120px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .cases {
+    &__container {
+      margin: 0 0 100px;
+      &__header {
+        width: 350px;
+
+        span {
+          font-size: 1rem;
+        }
+  
+        h2 {
+          font-size: 2rem;
+          line-height: 30px;
+        }
+      }
+
+      &__slider {
+        height: 300px;
+
+        &__controls {
+          position: absolute;
+          bottom: -40px;
+          width: 350px;
+
+          .control {
+            position: relative;
+            cursor: pointer;
+            border-radius: 10px;
+
+            .arrowUp {
+              display: none;
+            }
+
+            p {
+              top: 31%;
+              left: 20%;
+              width: 50px;
+              text-align: center;
+              font-size: .8rem;
+              line-height: 17px;
+              color: $brandColor;
+              position: absolute;
+            }
+
+            &:first-child p {
+              top: 18%;
+              left: 22%;
+              font-size: .8rem;
+            }
+
+            img {
+              opacity: 0;
+            }
+
+            .controlBtn {
+              width: 85px;
+            }
+          }
+
+          .active {
+            box-shadow: $boxShadow;
+            border-radius: 10px;
+            position: relative;
+
+            .arrowUp {
+              width: 8px;
+              display: flex;
+              position: absolute;
+              top: 8px;
+              right: 8px;
+            }
+
+            p {
+              top: 31%;
+              left: 20%;
+              width: 50px;
+              text-align: center;
+              font-size: .7rem;
+              line-height: 17px;
+              color: $white;
+              position: absolute;
+            }
+
+            &:first-child p {
+              top: 16%;
+              font-size: .7rem;
+            }
+
+            img {
+              opacity: 1;
+            }
+
+            .controlBtn {
+              width: 85px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

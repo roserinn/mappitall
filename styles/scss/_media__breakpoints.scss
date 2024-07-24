@@ -1,5 +1,6 @@
-@mixin desktop() {
-  @media (max-width: $ui-desktop) {
+ 
+@mixin laptop() {
+  @media (max-width: $ui-laptop) {
     @content;
     
   }

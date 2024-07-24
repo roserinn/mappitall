@@ -1,0 +1,91 @@
+.process {
+
+  &__container {
+    margin: 200px auto 100px;
+    width: 1300px;
+
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 50px;
+
+      span {
+        text-transform: uppercase;
+        color: $gray;
+      }
+
+      h2 {
+        font-size: 3rem;
+        font-weight: $fontWeightBold;
+        line-height: 60px;
+        color: $brandColor;
+      }
+    }
+
+    &__steps {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+
+      .road {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: .6rem;
+      }
+
+      .step {
+        &:nth-child(3),&:nth-child(7)  {
+          justify-content: start;
+          text-align: end;
+        }
+
+        width: 910px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 60px;
+
+        .circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          background-color: $brandColor;
+
+          span {
+            color: $white;
+            font-size: 2.5rem;
+          }
+        }
+
+        .description {
+          font-size: 2rem;
+          width: 350px;
+          font-weight: $fontWeightBold;
+          color: $brandColor;
+        }
+      }
+    }
+  }
+}
+
+@include laptop() {
+  // 1500px
+  }
+  
+  @include tablet() {
+  // 1000px
+  }
+  
+  @include mobile() {
+  // 500px
+  }

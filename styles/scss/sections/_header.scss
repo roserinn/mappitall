@@ -12,37 +12,117 @@
     padding: 10px 0;
     margin: 0 auto;
     width: 1200px;
+    transition: width $transitionDuration ease;
 
-    ul {
-      display: flex;
-      align-items: center;
-      gap: 50px;
 
-      li { 
-          border:none;
+    &__menu {
+      display: none;
+    }
+
+    &__nav {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        li {
+          border: none;
           position: relative;
-    
-        &::after{
-          content: '';
-          position: absolute;
-          width: 0px;
-          height: 1.5px;
-          left: 50%;
-          top: 18px;
-          bottom: 0;
-          background-color: $white;
-          transition: all $transitionDuration ease-in-out;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 1.5px;
+            left: 50%;
+            top: 18px;
+            bottom: 0;
+            background-color: $white;
+            transition: all $transitionDuration ease-in-out;
+          }
+
+          &:hover::after {
+            width: 100%;
+            left: 0;
+          }
+
+          a {
+            color: $white;
+          }
         }
-        &:hover::after{
-          width: 100%;
-          left: 0;
-        }
-        a {
-          color: $white;
-        }
+      }
+    }
+
+
+    &__button {
+      background-color: transparent;
+      color: $white;
+      font-weight: $fontWeightBold;
+      padding: 10px 50px;
+      border: 1px solid $white;
+      border-radius: $borderRadius;
+      transition: background-color $transitionDuration ease-in-out;
+      box-shadow: $boxShadow;
+
+      &:hover {
+        background-color: $white;
+        color: $black;
       }
 
     }
   }
 }
 
+@include laptop() {
+  .header {
+    &__container {
+      width: 1000px;
+    }
+  }
+}
+
+@include tablet() {
+  @include tablet() {
+    .header {
+
+      &__container {
+        width: 500px;
+
+        &__menu {
+          width: 40px;
+          height: 40px;
+          background-color: $white;
+          border-radius: $borderRadius;
+          display: block;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 20px;
+          }
+        }
+
+        &__nav {
+          display: none;
+        }
+
+        &__button {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+
+
+@include mobile() {
+  .header {
+    &__container {
+      width: 350px;
+    }
+  }
+
+}

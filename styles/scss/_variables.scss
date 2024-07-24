@@ -21,12 +21,18 @@ $brandColorLight: rgb(54, 59, 90);
 // ----------------------------------------------------------------------------------------------------------------------
 
 // other
-$borderRadiusBtn: 30px;
-$transitionDuration:  .3s;
+$borderRadius: 30px;
+$transitionDuration:  .2s;
+$boxShadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+$textShadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+$fontWeightBold: 600;
+$fontWeightLight: 200;
 
 // ----------------------------------------------------------------------------------------------------------------------
 
 // @media  
-$ui-mobile: '500px';
+$ui-mobile:  '501px';
 $ui-tablet: '1000px';
-$ui-desktop: '1200px';
+$ui-laptop: '1220px';
+
+ 

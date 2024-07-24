@@ -6,7 +6,9 @@
 
   video {
     width: 100%;
+    height: 100%;
     position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
   }
@@ -30,13 +32,13 @@
     margin: 0 auto;
     padding: 200px 0;
     color: $white;
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+    text-shadow: $textShadow;
 
 
     &__title {
       font-family: "Space Grotesk", sans-serif;
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: $fontWeightBold;
       margin-bottom: 15px;
     }
 
@@ -50,11 +52,11 @@
       background-color: $white;
       color: $black;
       font-size: 1.2rem;
-      font-weight: 600;
+      font-weight: $fontWeightBold;
       padding: 20px 50px;
-      border-radius: $borderRadiusBtn;
+      border-radius: $borderRadius;
       transition: background-color $transitionDuration ease-in-out;
-      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+      box-shadow: $boxShadow;
       text-shadow: none;
     }
 
@@ -64,3 +66,62 @@
     }
   }
 }
+
+@include laptop() {
+  .callToAction {
+    &__container {
+      width: 1000px;
+    }
+  }
+  }
+  
+  @include tablet() {
+    .callToAction {
+      height: 600px;
+
+      &__container {
+        width: 500px;
+    
+        &__title {
+          font-size: 2.4rem;
+        }
+    
+        &__text {
+          font-size: 1rem;
+          line-height: 28px;
+          margin-bottom: 50px;
+        }
+    
+        &__button {
+          font-size: 1rem;
+          padding: 15px 40px;
+        }
+      }
+    }
+  }
+  
+  @include mobile() {
+    .callToAction {
+      height: 600px;
+
+      &__container {
+        width: 350px;
+    
+        &__title {
+          font-size: 1.5rem;
+        }
+    
+        &__text {
+          text-align: center;
+          font-size: .9rem;
+          line-height: 18px;
+          margin-bottom: 40px;
+        }
+    
+        &__button {
+          font-size: .9rem;
+          padding: 15px 35px;
+        }
+      }
+    }
+  }

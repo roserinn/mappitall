@@ -1,0 +1,235 @@
+.footer {
+  background-color: $brandColor;
+  color: $white;
+
+  &__container {
+    width: 1200px;
+    margin: 50px auto;
+
+    &__body {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      p {
+        width: 60%;
+        line-height: 20px;
+        font-weight: $fontWeightLight;
+      }
+
+      .social {
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+    &__right {
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: $fontWeightBold;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        line-height: 20px;
+        font-weight: $fontWeightLight;
+
+        img {
+          margin-bottom: 3px;
+        }
+      }
+
+      a {
+        background-color: $white;
+        color: $black;
+        font-size: 1rem;
+        font-weight: $fontWeightBold;
+        padding: 10px 30px;
+        border-radius: $borderRadius;
+        transition: background-color $transitionDuration ease-in-out;
+        box-shadow: $boxShadow;
+        text-shadow: none;
+      }
+    }
+
+    &__bottom {
+      padding: 30px 0 0;
+      border-top: 1px solid #ffffff4d;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      small {
+        a {
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+}
+
+@include laptop() {
+  .footer {
+    &__container {
+      width: 1000px;
+      margin: 20px auto;
+    }
+  }
+}
+
+@include tablet() {
+  .footer {
+    &__container {
+      width: 500px;
+
+      &__body {
+        margin-bottom: 30px;
+      }
+
+      &__left {
+        gap: 15px;
+
+        .logo {
+          img {
+            width: 120px;
+          }
+        }
+
+        p {
+          width: 80%;
+          line-height: 17px;
+          font-size: .9rem;
+        }
+
+        .social {
+          gap: 5px;
+
+          img {
+            width: 25px;
+          }
+        }
+      }
+
+      &__right {
+        gap: 10px;
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: $fontWeightBold;
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          line-height: 17px;
+          font-size: .9rem;
+
+          img {
+            margin-bottom: 3px;
+          }
+        }
+
+        a {
+          line-height: 17px;
+          font-size: .9rem;
+        }
+      }
+
+      &__bottom {
+        padding: 15px 0 0;
+        display: flex;
+        font-size: .8rem;
+        gap: 5px;
+      }
+
+    }
+  }
+}
+
+@include mobile() {
+  .footer {
+    &__container {
+      width: 350px;
+
+      &__body {
+        margin-bottom: 20px;
+      }
+
+      &__left {
+        gap: 10px;
+
+        .logo {
+          img {
+            width: 100px;
+          }
+        }
+
+        p {
+          width: 80%;
+          line-height: 16px;
+          font-size: .8rem;
+        }
+
+        .social {
+          gap: 5px;
+
+          img {
+            width: 20px;
+          }
+        }
+      }
+
+      &__right {
+        gap: 8px;
+
+        h3 {
+          font-size: 1rem;
+          font-weight: $fontWeightBold;
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          line-height: 17px;
+          font-size: .8rem;
+
+          img {
+            width: 10px;
+            margin-bottom: 3px;
+          }
+        }
+
+        a {
+          line-height: 17px;
+          font-size: .8rem;
+        }
+      }
+
+      &__bottom {
+        padding: 10px 0 0;
+        font-size: .6rem;
+      }
+
+    }
+  }
+}

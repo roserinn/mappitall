@@ -5,21 +5,109 @@
 @import './fonts';
 
 // ------------------------- sections ---------------------------
-@import './sections/header'; 
+@import './sections/header';
 @import './sections/hero';
 @import './sections/forWhat';
 @import './sections/callToAction';
 @import './sections/benefits';
-
+@import './sections/cases';
+@import './sections/process';
+@import './sections/contacts';
+@import './sections/footer';
 
 body {
   font-family: "Poppins", sans-serif;
-
 }
 
-.wrapper {  
+.wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
+}
+
+.menu {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: $ui-index-4;
+  opacity: 0;
+  display: none;
+  transition: all .5s ease;
+  padding: 80px;
+
+  &__container {
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+
+    &__close {
+      position: absolute;
+      right: 10px;
+      top: -60px;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        text-align: center;
+
+        a {
+          color: $black;
+
+          &:hover {
+            color: $brandColorLight;
+          }
+        }
+      }
+
+      .header__button {
+        background-color: transparent;
+        color: $brandColorLight;
+        font-weight: $fontWeightBold;
+        padding: 10px 50px;
+        border: 1px solid $brandColorLight;
+        border-radius: $borderRadius;
+        transition: background-color $transitionDuration ease-in-out;
+        box-shadow: $boxShadow;
+
+        &:hover {
+          background-color: $brandColorLight;
+          color: $white;
+        }
+
+      }
+    }
+  }
+}
+
+
+@include mobile() {
+
+  .menu {
+    padding: 50px;
+  
+    &__container {
+      width: 350px;
+
+      &__close {
+        top: -30px;
+      }
+    }
+  }
+
 }

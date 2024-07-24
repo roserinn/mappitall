@@ -3,8 +3,11 @@
   position: relative;
   overflow-y: hidden;
 
+
   video {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -26,29 +29,30 @@
 
   .galssmorfism {
     background: rgba(255, 255, 255, 0.025);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: $boxShadow;
     backdrop-filter: blur(5.2px);
     -webkit-backdrop-filter: blur(5.2px);
     border-right: 1px solid rgba(255, 255, 255, 0.111);
-    height: 100vh;
+    height: 100%;
     width: 50%;
     position: absolute;
     top: 0;
     left: 0;
+    transition: width $transitionDuration ease;
   }
 
   &__container {
     display: flex;
+    height: 100%;
     position: inherit;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     margin: 0 auto;
-    top: 200px;
     width: 1200px;
     color: $white;
-    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
-
+    text-shadow: $textShadow;
+    transition: font-size $transitionDuration ease;
 
     &__subtitle {
       text-transform: uppercase;
@@ -70,18 +74,100 @@
       background-color: $white;
       color: $black;
       font-size: 1.2rem;
-      font-weight: 600;
+      font-weight: $fontWeightBold;
       padding: 20px 30px;
-      border-radius: $borderRadiusBtn;
+      border-radius: $borderRadius;
       transition: background-color $transitionDuration ease-in-out;
-      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+      box-shadow: $boxShadow;
       text-shadow: none;
+
+      &:hover {
+        background-color: $brandColor;
+        color: $white;
+      }
+    }
+  }
+}
+
+@include laptop() {
+  .hero {
+    .galssmorfism {
+      width: 60%;
     }
 
-    &__button:hover {
-      background-color: $brandColor;
-      color: $white;
+    &__container {
+      width: 1000px;
+
+
+      &__subtitle {
+        font-size: 1.4rem;
+      }
+
+      &__title {
+        font-size: 6rem;
+        line-height: 100px;
+      }
+
+      &__text {
+        font-size: 1.1rem;
+        margin-bottom: 70px;
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .hero {
+    .galssmorfism {
+      display: none;
     }
 
+    &__container {
+      width: 500px;
+      text-align: center;
+      align-items: center;
+
+      &__subtitle {
+        font-size: 1.3rem;
+      }
+
+      &__title {
+        font-size: 6rem;
+        line-height: 120px;
+      }
+
+      &__text {
+        font-size: 1.1rem;
+        margin-bottom: 70px;
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .hero {
+  
+    &__container {
+      width: 350px;
+
+      &__subtitle {
+        font-size: 1rem;
+      }
+
+      &__title {
+        font-size: 4rem;
+        line-height: 80px;
+      }
+
+      &__text {
+        font-size: .9rem;
+        margin-bottom: 50px;
+      }
+
+      &__button {
+        font-size: .9rem;
+        padding: 15px 20px;
+      }
+    }
   }
 }

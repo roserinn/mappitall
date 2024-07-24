@@ -19,7 +19,7 @@
 
       h2 {
         font-size: 3rem;
-        font-weight: 700;
+        font-weight: $fontWeightBold;
         line-height: 60px;
         color: $brandColor;
       }
@@ -63,12 +63,11 @@
         width: 800px;
         border-radius: 30px;
         padding: 60px;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.349), 0 1px 5px rgba(0, 0, 0, 0.349);
 
         h3 {
           font-family: "Space Grotesk", sans-serif;
           font-size: 3rem;
-          font-weight: 700;
+          font-weight: $fontWeightBold;
           margin-bottom: 40px;
         }
 
@@ -81,8 +80,6 @@
       }
     }
   }
-
-
 }
 
 .indicators {
@@ -94,6 +91,7 @@
   position: absolute;
 
 }
+
 .indicators li {
   float: left;
   height: 10px;
@@ -101,9 +99,13 @@
   text-align: center;
   width: 10px;
 }
-.indicators li:last-child {margin: 0;}
+
+.indicators li:last-child {
+  margin: 0;
+}
+
 .indicators a {
-  background-color:  $lightGray;
+  background-color: $lightGray;
   border-radius: 8px;
   color: $lightGray;
   display: inline-block;
@@ -113,5 +115,124 @@
 
 .indicators .active a {
   background: $brandColor;
-border: 1px solid $brandColor;
+  border: 1px solid $brandColor;
+}
+
+@include laptop() {
+  .forWhat {
+
+    &__container {
+      &__header {
+        width: 1000px;
+
+        h2 {
+          font-size: 2.5rem;
+          line-height: 50px;
+        }
+
+        &__sliderBtn {
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .forWhat {
+
+    &__container {
+      &__header {
+        width: 500px;
+ 
+        span {
+          font-size: 1rem;
+        }
+  
+        h2 {
+          font-size: 2rem;
+          line-height: 30px;
+        }
+  
+        &__sliderBtn {
+          gap: 10px;
+        }
+      }
+  
+      &__slider {
+        height: 350px;
+  
+        .slide {
+          height: 350px;
+          width: 500px;
+          padding: 60px;
+  
+          h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+          }
+  
+          p {
+            font-size: 1rem;
+            line-height: 20px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .forWhat {
+
+    &__container {
+      &__header {
+        width: 350px;
+ 
+        span {
+          font-size: 1rem;
+        }
+  
+        h2 {
+          font-size: 2rem;
+          line-height: 40px;
+        }
+  
+        &__sliderBtn {
+          gap: 10px;
+  
+          button {
+            width: 30px;
+            height: 30px;
+            img {
+              width: 17px;
+            }
+          }
+        }
+      }
+  
+      &__slider {
+        height: 250px;
+  
+        .slide {
+          height: 250px;
+          width: 350px;
+          padding: 40px;
+  
+          h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+          }
+  
+          p {
+            font-size: .9rem;
+            line-height: 17px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
 }
