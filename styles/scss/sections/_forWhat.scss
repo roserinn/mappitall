@@ -125,9 +125,13 @@
       &__header {
         width: 1000px;
 
+       span {
+          font-size: 1rem;
+        }
+  
         h2 {
-          font-size: 2.5rem;
-          line-height: 50px;
+          font-size: 2rem;
+          line-height: 40px;
         }
 
         &__sliderBtn {
@@ -192,12 +196,12 @@
         width: 350px;
  
         span {
-          font-size: 1rem;
+          font-size: .9rem;
         }
   
         h2 {
-          font-size: 2rem;
-          line-height: 40px;
+          font-size: 1.5rem;
+          line-height: 30px;
         }
   
         &__sliderBtn {

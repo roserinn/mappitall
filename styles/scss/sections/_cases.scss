@@ -214,6 +214,7 @@
 @include tablet() {
   .cases {
     &__container {
+      margin: 100px 0 50px;
       &__header {
         width: 500px;
 
@@ -332,16 +333,16 @@
 @include mobile() {
   .cases {
     &__container {
-      margin: 0 0 100px;
+      margin: 100px 0;
       &__header {
         width: 350px;
 
         span {
-          font-size: 1rem;
+          font-size: .9rem;
         }
   
         h2 {
-          font-size: 2rem;
+          font-size: 1.5rem;
           line-height: 30px;
         }
       }

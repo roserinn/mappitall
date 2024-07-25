@@ -7,6 +7,16 @@
     flex-direction: column;
     align-items: center;
 
+    h2 {
+      font-size: 3rem;
+      font-weight: $fontWeightBold;
+      line-height: 60px;
+      color: $brandColor;
+      margin-bottom: 70px;
+      width: 70%;
+      text-align: center;
+    }
+
     &__title {
       img {
         width: 100%;
@@ -17,23 +27,78 @@
       width: 1000px;
       height: 120px;
       background-color: $white;
-      top: 130px;
-      left: 160px;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%);
       border-radius: $borderRadius;
       position: absolute;
-      box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.242);
+      box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.288);
     }
   }
 }
 
 @include laptop() {
-  // 1500px
-  }
+  .contacts {
+    &__container {
+      width: 1000px;
   
-  @include tablet() {
-  // 1000px
+      h2 {
+        font-size: 2rem;
+        line-height: 40px;
+      }
+
+      &__form {
+        width: 800px;
+        height: 110px;
+      }
+    }
   }
+}
+
+@include tablet() {
+  .contacts {
+    &__container {
+      width: 500px;
   
-  @include mobile() {
-  // 500px
+      h2 {
+        width: 100%;
+        font-size: 2rem;
+        line-height: 40px;
+        margin-bottom: 50px;
+      }
+
+      &__form {
+        width: 400px;
+        height: 80px;
+        top: 59%;
+        left: 50%;
+        transform: translate(-50%);
+        border-radius: $borderRadius;
+        position: absolute;
+        box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.288);
+      }
+    }
   }
+}
+
+@include mobile() {
+  .contacts {
+    &__container {
+      width: 350px;
+  
+      h2 {
+        width: 100%;
+        font-size: 1.5rem;
+        line-height: 30px;
+        margin-bottom: 50px;
+      }
+
+      &__form {
+        width: 300px;
+        height: 60px;
+        top: 62%;
+        left: 50%;
+      }
+    }
+  }
+}

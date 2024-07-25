@@ -114,9 +114,7 @@
       }
     }
   }
-
 }
-
 
 @include mobile() {
   .header {
@@ -124,5 +122,4 @@
       width: 350px;
     }
   }
-
 }

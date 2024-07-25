@@ -4,7 +4,7 @@ gsap.from('.header', {
   })
   
   gsap.from('.galssmorfism', {
- delay: 3.5, y: -1000, duration: 1, ease: 'power2.out'
+ delay: 3.5, y: -1200, duration: 1, ease: 'power2.out'
   })
 
   gsap.from('.hero__container__subtitle', {
@@ -105,17 +105,21 @@ function checkScreenWidth() {
         videoSource.src = './public/assets/videos/skyskraperMobile.mp4';
         video.load();
         video.currentTime = currentTime;
-        video.play();
+        video.play().catch(error => {
+            console.log("Error playing video:", error);
+        });
         hasSwitchedToSmallVideo = true;
-        hasSwitchedToLargeVideo = false;  // reset the flag for larger video
+        hasSwitchedToLargeVideo = false;  
     } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
         const currentTime = video.currentTime;
         videoSource.src = './public/assets/videos/skyskraper.mp4';
         video.load();
         video.currentTime = currentTime;
-        video.play();
+        video.play().catch(error => {
+            console.log("Error playing video:", error);
+        });
         hasSwitchedToLargeVideo = true;
-        hasSwitchedToSmallVideo = false;  // reset the flag for smaller video
+        hasSwitchedToSmallVideo = false;  
     }
 }
 
@@ -126,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.header__container__menu');
   const menu = document.querySelector('.menu');
   const body = document.querySelector('body');
-  const close = document.querySelector('.menu__container__close')
+  const close = document.querySelector('.menu__container__close');
 
   burger.addEventListener('click', () => {
     body.style.overflow = 'hidden';
@@ -134,17 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       menu.style.opacity = '1';
-      menu.style.top = '0'; // Slide down into view
-    }, 50); // Slightly reduced timeout for better effect
-  })
+      menu.style.top = '0'; 
+    }, 50);
+  });
 
   close.addEventListener('click', () => {
     body.style.overflow = 'scroll';
     menu.style.opacity = '0';
-    menu.style.top = '-100%'; // Slide up out of view
+    menu.style.top = '-100%'; 
 
     setTimeout(() => {
       menu.style.display = 'none';
-    }, 500); // Match the CSS transition duration
-  })
-})
+    }, 500); 
+  });
+});
