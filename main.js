@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
       document.body.classList.remove('no-scroll');
       startAnimations()
       checkScreenWidth();
-    }, 10); // Задержка в 1 секунду
+    }); // Задержка в 1 секунду
   }, 1000); 
 });
 
