@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       preloader.classList.add('hidden');
       document.body.classList.remove('no-scroll');
-      // Call checkScreenWidth() after 0.3 seconds
+      startAnimations()
       checkScreenWidth();
     }, 10); // Задержка в 1 секунду
   }, 1000); 
@@ -23,7 +23,7 @@ function checkScreenWidth(resize = false) {
 
     if (screenWidth <= 1000 && !hasSwitchedToSmallVideo) {
         const currentTime = video.currentTime;
-        videoSource.src = './public/assets/videos/skyskraperMobile.mp4';
+        videoSource.src = './assets/videos/skyskraperMobile.mp4';
         video.load();
         if(resize) {
           video.currentTime = currentTime;
@@ -35,7 +35,7 @@ function checkScreenWidth(resize = false) {
         hasSwitchedToLargeVideo = false;  
     } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
         const currentTime = video.currentTime;
-        videoSource.src = './public/assets/videos/skyskraper.mp4';
+        videoSource.src = './assets/videos/skyskraper.mp4';
         video.load();
         if(resize) {
           video.currentTime = currentTime;
@@ -53,28 +53,31 @@ window.addEventListener('resize', () => {
 });
 // window.addEventListener('load', checkScreenWidth);
 
+function startAnimations() {
+  gsap.from('.header', {
+    delay: 5, y: -60, duration: 1, ease: 'power2.out'
+  });
 
-gsap.from('.header', {
-  delay: 5, y: -60, duration: 1, ease: 'power2.out'
-  })
-  
   gsap.from('.galssmorfism', {
- delay: 3.5, y: -1200, duration: 1, ease: 'power2.out'
-  })
+    delay: 3.5, y: -1200, duration: 1, ease: 'power2.out'
+  });
 
   gsap.from('.hero__container__subtitle', {
-  delay: 3.9, duration: 1, ease: 'power', opacity: 0
-}) 
-gsap.from('.hero__container__title', {
-delay: 4.4, x: -500, duration: 1.1, ease: '', opacity: 0
-})
+    delay: 3.9, duration: 1, ease: 'power', opacity: 0
+  });
 
-gsap.from('.hero__container__text', {
-  delay: 4.5, x: -500, duration: 1.2, ease: 'power', opacity: 0
-})
-gsap.from('.hero__container__button', { 
-  delay: 4.7, y: 50, duration: 1.6, ease: 'back', opacity: 0
-}) 
+  gsap.from('.hero__container__title', {
+    delay: 4.4, x: -500, duration: 1.1, ease: '', opacity: 0
+  });
+
+  gsap.from('.hero__container__text', {
+    delay: 4.5, x: -500, duration: 1.2, ease: 'power', opacity: 0
+  });
+
+  gsap.from('.hero__container__button', {
+    delay: 4.7, y: 50, duration: 1.6, ease: 'back', opacity: 0
+  });
+}
 
 const sliderBg = [
   './assets/img/sectonImg/slider/1.png',
