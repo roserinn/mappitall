@@ -9,54 +9,61 @@
   <title>Mappitall</title>
 </head>
 
-<body>
+<body class="no-scroll"> 
+  <div id="preloader">
+    <div>
+      <img src="./public/assets/img/icons/52-location-pin-on-square-map-outline.gif" alt="Preloader">
+      <p>Loading...</p>
+    </div>
+  </div>
+
   <div class="wrapper">
     <header class="header">
-<div class="header__container">
-     <div class="header__container__logo">
-        <a href="#"><img src="./public/assets/img/icons/logo.svg" alt="Mappitall Logo" class="logo"></a>
-      </div>
-  
-      <nav class="header__container__nav">
+      <div class="header__container">
+        <div class="header__container__logo">
+          <a href="#"><img src="./public/assets/img/icons/logo.svg" alt="Mappitall Logo" class="logo"></a>
+        </div>
+
+        <nav class="header__container__nav">
           <ul>
             <li><a href="#">Application</a></li>
             <li><a href="#">Benefits</a></li>
             <li><a href="#">Cases</a></li>
             <li><a href="#">Process</a></li>
           </ul>
-      </nav>
+        </nav>
 
-     <button class="header__container__button">Let’s talk</button>
-     <div class="header__container__menu">
-      <img src="./public/assets/img/icons/menu-bar.png" alt="Burger Menu">
-     </div>
-</div>
-   
+        <button class="header__container__button">Let’s talk</button>
+        <div class="header__container__menu">
+          <img src="./public/assets/img/icons/menu-bar.png" alt="Burger Menu">
+        </div>
+      </div>
+
     </header>
-   <div class="menu">
+    <div class="menu">
       <nav class="menu__container">
-      
-      <div class="menu__container__close">
-        <img src="./public/assets/img/icons/close.png" alt="Cross">
-       </div>
-      <ul class="menu__container__list">
-        <li><a href="#">Application</a></li>
-        <li><a href="#">Benefits</a></li>
-        <li><a href="#">Cases</a></li>
-        <li><a href="#">Process</a></li>
-         <button class="header__button">Let’s talk</button>
-      </ul>
-     
-    </nav> 
-   </div>
-  
+
+        <div class="menu__container__close">
+          <img src="./public/assets/img/icons/close.png" alt="Cross">
+        </div>
+        <ul class="menu__container__list">
+          <li><a href="#">Application</a></li>
+          <li><a href="#">Benefits</a></li>
+          <li><a href="#">Cases</a></li>
+          <li><a href="#">Process</a></li>
+          <button class="header__button">Let’s talk</button>
+        </ul>
+
+      </nav>
+    </div>
+
 
 
     <section class="hero">
-      <video id="myVideo" autoplay muted playsinline controls="false">
+      <video id="myVideo" autoplay muted playsinline>
         <source id="videoSource" src="./public/assets/videos/skyskraper.mp4" type="video/mp4">
         Your browser does not support the video tag.
-    </video>
+      </video>
       <div class="shadow"></div>
       <div class="galssmorfism"></div>
       <div class="hero__container">
@@ -185,7 +192,7 @@
     </section>
 
     <section class="callToAction">
-      <video autoplay muted playsinline controls="false">
+      <video autoplay muted playsinline>
         <source src="./public/assets/videos/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -202,7 +209,7 @@
       <div class="benefits__container">
         <div class="benefits__container__header">
           <span>
-            Benefits of working with us 
+            Benefits of working with us
           </span>
           <h2>
             Benefits of using maps <br> in business
@@ -218,7 +225,7 @@
             <p>We prove our online mapping expertise through action, conducting a 4-6 week MVP phase to ensure process
               and communication alignment with clients.</p>
           </div>
-          
+
           <div class="benefits__container__cards__card">
             <div class="cardHeader">
               <img src="./public/assets/img/icons/benefitsIcons/projectVisualization.svg" alt="Project Visualization">
@@ -280,34 +287,34 @@
 
         <div class="cases__container__slider">
           <div class="slide">
-            <video autoplay muted playsinline controls="false">
+            <video autoplay muted playsinline>
               <source src="./public/assets/videos/skyskraper.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
-        
+
           <div class="slide">
-            <video autoplay muted playsinline controls="false">
+            <video autoplay muted playsinline>
               <source src="./public/assets/videos/svn.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
-        
+
           <div class="slide">
-            <video autoplay muted playsinline controls="false">
+            <video autoplay muted playsinline>
               <source src="./public/assets/videos/casino.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
-        
+
           <div class="slide">
-            <video autoplay muted playsinline controls="false">
+            <video autoplay muted playsinline>
               <source src="./public/assets/videos/3d.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
-        
+
 
         <div class="cases__container__slider__controls">
           <div class="control active">
@@ -316,19 +323,19 @@
             <img src="./public/assets/img/sectonImg/cases/1.png" class="controlBtn" alt="skyskraper">
 
           </div>
-          <div class="control active">
+          <div class="control">
             <img src="./public/assets/img/icons/arrowUp.png" class="arrowUp" alt="arrow up">
             <p>SVN</p>
             <img src="./public/assets/img/sectonImg/cases/2.png" class="controlBtn" alt="skyskraper">
 
           </div>
-          <div class="control active">
+          <div class="control">
             <img src="./public/assets/img/icons/arrowUp.png" class="arrowUp" alt="arrow up">
             <p>Casino</p>
             <img src="./public/assets/img/sectonImg/cases/3.png" class="controlBtn" alt="skyskraper">
 
           </div>
-          <div class="control active">
+          <div class="control">
             <img src="./public/assets/img/icons/arrowUp.png" class="arrowUp" alt="arrow up">
             <p>3D</p>
             <img src="./public/assets/img/sectonImg/cases/4.png" class="controlBtn" alt="skyskraper">
@@ -339,7 +346,7 @@
     </section>
 
     <section class="callToAction">
-      <video autoplay muted playsinline controls="false">
+      <video autoplay muted playsinline>
         <source src="./public/assets/videos/video2.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -362,7 +369,7 @@
         <div class="process__container__steps">
           <div class="step">
             <div class="circle">
-              <span>01</span> 
+              <span>01</span>
             </div>
             <div class="description">Research <br> phase</div>
           </div>
@@ -446,7 +453,7 @@
 
     <footer class="footer">
       <div class="footer__container">
-  <div class="footer__container__body">
+        <div class="footer__container__body">
           <div class="footer__container__left">
             <div class="logo">
               <img src="./public/assets/img/icons/logo.svg" alt="Mappitall Logo">
@@ -466,16 +473,16 @@
             <p><img src="./public/assets/img/icons/phone.png" alt="Phone"> +380 67 435 96 46</p>
             <p><img src="./public/assets/img/icons/at.png" alt="Email"> vladimir@mappitall.com</p>
             <p><img src="./public/assets/img/icons/location.png" alt="Location"> Coimbra, Coimbra, Portugal</p>
-           <a href="#">Let's talk</a>
+            <a href="#">Let's talk</a>
           </div>
         </div>
-      
-           <div class="footer__container__bottom">
-        <small>This site is owned and operated by Volodymyr Ovramenko</small>
-        <small><a href="#">Privacy Policy</a></small>
+
+        <div class="footer__container__bottom">
+          <small>This site is owned and operated by Volodymyr Ovramenko</small>
+          <small><a href="#">Privacy Policy</a></small>
+        </div>
       </div>
-      </div>
-   
+
     </footer>
   </div>
 
