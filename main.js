@@ -4,7 +4,6 @@ window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       preloader.classList.add('hidden');
       document.body.classList.remove('no-scroll');
-      пш
       new Promise(resolve => setTimeout(resolve, 500)).then(() => {
           checkScreenWidth(); 
       });
