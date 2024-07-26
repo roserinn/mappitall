@@ -1,47 +1,58 @@
-
 window.addEventListener('load', () => {
   setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('hidden');
+    setTimeout(() => {
       const preloader = document.getElementById('preloader');
       preloader.classList.add('hidden');
       document.body.classList.remove('no-scroll');
-      new Promise(resolve => setTimeout(resolve, 500)).then(() => {
-          checkScreenWidth(); 
-      });
-  }, 1000);
+      // Call checkScreenWidth() after 0.3 seconds
+      checkScreenWidth();
+    }, 10); // Задержка в 1 секунду
+  }, 1000); 
 });
+
 
 let hasSwitchedToSmallVideo = false;
 let hasSwitchedToLargeVideo = false;
 
-function checkScreenWidth() {
-  const video = document.getElementById('myVideo');
-  const videoSource = document.getElementById('videoSource');
-  const screenWidth = window.innerWidth;
+function checkScreenWidth(resize = false) {
+    const video = document.getElementById('myVideo');
+    const videoSource = document.getElementById('videoSource');
+    const screenWidth = window.innerWidth;
 
-  if (screenWidth <= 1000 && !hasSwitchedToSmallVideo) {
-      const currentTime = video.currentTime;
-      videoSource.src = './assets/videos/skyskraperMobile.mp4';
-      video.load();
-      video.currentTime = currentTime;
-      video.play().catch(error => {
-          console.log("Error playing video:", error);
-      });
-      hasSwitchedToSmallVideo = true;
-      hasSwitchedToLargeVideo = false;  
-  } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
-      const currentTime = video.currentTime;
-      videoSource.src = './assets/videos/skyskraper.mp4';
-      video.load();
-      video.currentTime = currentTime;
-      video.play().catch(error => {
-          console.log("Error playing video:", error);
-      });
-      hasSwitchedToLargeVideo = true;
-      hasSwitchedToSmallVideo = false;  
-  }
+    if (screenWidth <= 1000 && !hasSwitchedToSmallVideo) {
+        const currentTime = video.currentTime;
+        videoSource.src = './public/assets/videos/skyskraperMobile.mp4';
+        video.load();
+        if(resize) {
+          video.currentTime = currentTime;
+        }
+        video.play().catch(error => {
+            console.log("Error playing video:", error);
+        });
+        hasSwitchedToSmallVideo = true;
+        hasSwitchedToLargeVideo = false;  
+    } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
+        const currentTime = video.currentTime;
+        videoSource.src = './public/assets/videos/skyskraper.mp4';
+        video.load();
+        if(resize) {
+          video.currentTime = currentTime;
+        }
+        video.play().catch(error => {
+            console.log("Error playing video:", error);
+        });
+        hasSwitchedToLargeVideo = true;
+        hasSwitchedToSmallVideo = false;  
+    }
 }
 
-window.addEventListener('resize', checkScreenWidth);
+window.addEventListener('resize', () => {
+  checkScreenWidth(true);
+});
+// window.addEventListener('load', checkScreenWidth);
+
 
 gsap.from('.header', {
   delay: 5, y: -60, duration: 1, ease: 'power2.out'
