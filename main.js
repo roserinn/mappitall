@@ -55,7 +55,7 @@ window.addEventListener('resize', () => {
 
 function startAnimations() {
   gsap.from('.header', {
-    delay: 5, y: -60, duration: 1, ease: 'power2.out'
+    delay: 4.7, y: -100, duration: 1, ease: 'power2.out', opacity: 0
   });
 
   gsap.from('.galssmorfism', {
@@ -63,19 +63,19 @@ function startAnimations() {
   });
 
   gsap.from('.hero__container__subtitle', {
-    delay: 3.9, duration: 1, ease: 'power', opacity: 0
+    delay: 3.6, duration: 1, ease: 'power', opacity: 0
   });
 
   gsap.from('.hero__container__title', {
-    delay: 4.4, x: -500, duration: 1.1, ease: '', opacity: 0
+    delay: 4, x: -500, duration: 1.1, ease: '', opacity: 0
   });
 
   gsap.from('.hero__container__text', {
-    delay: 4.5, x: -500, duration: 1.2, ease: 'power', opacity: 0
+    delay: 4.1, x: -500, duration: 1.2, ease: 'power', opacity: 0
   });
 
   gsap.from('.hero__container__button', {
-    delay: 4.7, y: 50, duration: 1.6, ease: 'back', opacity: 0
+    delay: 4.5, y: 50, duration: 1.6, ease: 'back', opacity: 0
   });
 }
 
