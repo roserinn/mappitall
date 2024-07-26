@@ -125,7 +125,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: $brandColor;
-  z-index: 3;
+  z-index: $ui-index-6;
   transition: opacity 1s ease, visibility 1s ease;
 
   div {
