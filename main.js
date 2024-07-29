@@ -16,11 +16,11 @@ function setPoster() {
   const screenWidth = window.innerWidth;
   const video = document.getElementById('myVideo');
 
-  if (screenWidth <= 1000) {
-      video.poster = './assets/videos/poster/skyskraperMobile.jpg';
-  } else {
-      video.poster = './assets/videos/poster/skyskraper.jpg';
-  }
+  // if (screenWidth <= 1000) {
+  //     video.poster = './assets/videos/poster/skyskraperMobile.jpg';
+  // } else {
+  //     video.poster = './assets/videos/poster/skyskraper.jpg';
+  // }
 }
 // Call the function to set the poster
 setPoster();
