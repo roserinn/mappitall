@@ -1,4 +1,7 @@
 .hero {
+  background-image: url(../../../public/assets/videos/poster/skyskraper.jpg);
+  background-size: cover;
+  background-color: rgb(41, 41, 41);
   height: 100vh;
   position: relative;
   overflow-y: hidden;
@@ -118,6 +121,7 @@
 
 @include tablet() {
   .hero {
+    background-image: url(../../../public/assets/videos/poster/skyskraperMobile.jpg);
     .galssmorfism {
       display: none;
     }
@@ -146,7 +150,7 @@
 
 @include mobile() {
   .hero {
-  
+
     &__container {
       width: 350px;
 
