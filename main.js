@@ -1,30 +1,3 @@
-// window.addEventListener('load', () => {
-//   setTimeout(() => {
-//     const preloader = document.getElementById('preloader');
-//     preloader.classList.add('hidden');
-//     setTimeout(() => {
-//       const preloader = document.getElementById('preloader');
-//       preloader.classList.add('hidden');
-//       document.body.classList.remove('no-scroll');
-//       startAnimations()
-//       checkScreenWidth();
-//     }); 
-//   }); 
-// });
-
-function setPoster() {
-  const screenWidth = window.innerWidth;
-  const video = document.getElementById('myVideo');
-
-  if (screenWidth <= 1000) {
-      video.poster = './assets/videos/poster/skyskraperMobile.jpg';
-  } else {
-      video.poster = './assets/videos/poster/skyskraper.jpg';
-  }
-}
-// Call the function to set the poster
-setPoster();
-
 
 let hasSwitchedToSmallVideo = false;
 let hasSwitchedToLargeVideo = false;
@@ -68,11 +41,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     checkScreenWidth();
     window.addEventListener('resize', () => checkScreenWidth(true));
 });
-window.addEventListener('resize', () => {
-  checkScreenWidth(true);
-});
-
-
 
   gsap.from('.header', {
     delay: 4.7, y: -100, duration: 1, ease: 'power2.out', opacity: 0
