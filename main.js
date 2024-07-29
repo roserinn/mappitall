@@ -1,16 +1,16 @@
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    preloader.classList.add('hidden');
-    setTimeout(() => {
-      const preloader = document.getElementById('preloader');
-      preloader.classList.add('hidden');
-      document.body.classList.remove('no-scroll');
-      startAnimations()
-      checkScreenWidth();
-    }); // Задержка в 1 секунду
-  }, 1000); 
-});
+// window.addEventListener('load', () => {
+//   setTimeout(() => {
+//     const preloader = document.getElementById('preloader');
+//     preloader.classList.add('hidden');
+//     setTimeout(() => {
+//       const preloader = document.getElementById('preloader');
+//       preloader.classList.add('hidden');
+//       document.body.classList.remove('no-scroll');
+//       startAnimations()
+//       checkScreenWidth();
+//     }); 
+//   }); 
+// });
 
 
 let hasSwitchedToSmallVideo = false;
@@ -25,35 +25,39 @@ function checkScreenWidth(resize = false) {
         const currentTime = video.currentTime;
         videoSource.src = './assets/videos/skyskraperMobile.mp4';
         video.load();
-        if(resize) {
-          video.currentTime = currentTime;
+        if (resize) {
+            video.currentTime = currentTime;
         }
         video.play().catch(error => {
             console.log("Error playing video:", error);
         });
         hasSwitchedToSmallVideo = true;
-        hasSwitchedToLargeVideo = false;  
+        hasSwitchedToLargeVideo = false;
     } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
         const currentTime = video.currentTime;
         videoSource.src = './assets/videos/skyskraper.mp4';
         video.load();
-        if(resize) {
-          video.currentTime = currentTime;
+        if (resize) {
+            video.currentTime = currentTime;
         }
         video.play().catch(error => {
             console.log("Error playing video:", error);
         });
         hasSwitchedToLargeVideo = true;
-        hasSwitchedToSmallVideo = false;  
+        hasSwitchedToSmallVideo = false;
     }
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    checkScreenWidth();
+    window.addEventListener('resize', () => checkScreenWidth(true));
+});
 window.addEventListener('resize', () => {
   checkScreenWidth(true);
 });
-// window.addEventListener('load', checkScreenWidth);
 
-function startAnimations() {
+
+
   gsap.from('.header', {
     delay: 4.7, y: -100, duration: 1, ease: 'power2.out', opacity: 0
   });
@@ -77,7 +81,9 @@ function startAnimations() {
   gsap.from('.hero__container__button', {
     delay: 4.5, y: 50, duration: 1.6, ease: 'back', opacity: 0
   });
-}
+
+
+
 
 const sliderBg = [
   './assets/img/sectonImg/slider/1.png',
@@ -150,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Функция для запуска видео
+
   function playVideosInView() {
     const videos = document.querySelectorAll('.callToAction video');
     videos.forEach(video => {
@@ -168,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Отслеживание, достиг ли пользователь определенного контейнера
+
   function onScrollHandler() {
     const targetContainer = document.querySelector('.forWhat__container__slider');
     if (targetContainer) {
@@ -181,13 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    playVideosInView(); // Проверка и запуск видео
+    playVideosInView(); 
   }
 
   window.addEventListener('scroll', onScrollHandler);
   window.addEventListener('resize', playVideosInView);
   window.addEventListener('load', playVideosInView);
-  playVideosInView(); // Первоначальная проверка на загрузке страницы
+  playVideosInView();
 });
 
 
