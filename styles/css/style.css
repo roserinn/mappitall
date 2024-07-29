@@ -185,7 +185,6 @@ h6 {
   }
 }
 .hero {
-  background-image: url(../../../public/assets/videos/poster/skyskraper.jpg);
   background-size: cover;
   background-color: rgb(43, 43, 43);
   height: 100vh;
@@ -288,9 +287,6 @@ h6 {
   }
 }
 @media (max-width: 1000px) {
-  .hero {
-    background-image: url(../../../public/assets/videos/poster/skyskraperMobile.jpg);
-  }
   .hero .galssmorfism {
     display: none;
   }
