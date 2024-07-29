@@ -17,36 +17,39 @@ let hasSwitchedToSmallVideo = false;
 let hasSwitchedToLargeVideo = false;
 
 function checkScreenWidth(resize = false) {
-    const video = document.getElementById('myVideo');
-    const videoSource = document.getElementById('videoSource');
-    const screenWidth = window.innerWidth;
+  const video = document.getElementById('myVideo');
+  const videoSource = document.getElementById('videoSource');
+  const screenWidth = window.innerWidth;
 
-    if (screenWidth <= 1000 && !hasSwitchedToSmallVideo) {
-        const currentTime = video.currentTime;
-        videoSource.src = './assets/videos/skyskraperMobile.mp4';
-        video.load();
-        if (resize) {
-            video.currentTime = currentTime;
-        }
-        video.play().catch(error => {
-            console.log("Error playing video:", error);
-        });
-        hasSwitchedToSmallVideo = true;
-        hasSwitchedToLargeVideo = false;
-    } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
-        const currentTime = video.currentTime;
-        videoSource.src = './assets/videos/skyskraper.mp4';
-        video.load();
-        if (resize) {
-            video.currentTime = currentTime;
-        }
-        video.play().catch(error => {
-            console.log("Error playing video:", error);
-        });
-        hasSwitchedToLargeVideo = true;
-        hasSwitchedToSmallVideo = false;
-    }
+  if (screenWidth <= 1000 && !hasSwitchedToSmallVideo) {
+      const currentTime = video.currentTime;
+      videoSource.src = './assets/videos/skyskraperMobile.mp4';
+      video.poster = './assets/videos/poster/skyskraperMobile.jpg'; // Set poster for small screen
+      video.load();
+      if (resize) {
+          video.currentTime = currentTime;
+      }
+      video.play().catch(error => {
+          console.log("Error playing video:", error);
+      });
+      hasSwitchedToSmallVideo = true;
+      hasSwitchedToLargeVideo = false;
+  } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
+      const currentTime = video.currentTime;
+      videoSource.src = './assets/videos/skyskraper.mp4';
+      video.poster = './assets/videos/poster/skyskraper.jpg'; // Set poster for large screen
+      video.load();
+      if (resize) {
+          video.currentTime = currentTime;
+      }
+      video.play().catch(error => {
+          console.log("Error playing video:", error);
+      });
+      hasSwitchedToLargeVideo = true;
+      hasSwitchedToSmallVideo = false;
+  }
 }
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     checkScreenWidth();
