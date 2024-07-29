@@ -1,8 +1,9 @@
 .hero {
-  background-color: rgb(43, 43, 43);
+  background-color: rgb(9, 9, 9);
   height: 100vh;
   position: relative;
   overflow-y: hidden;
+
 
   video {
     width: 100%;
@@ -118,7 +119,6 @@
 
 @include tablet() {
   .hero {
-   
     .galssmorfism {
       display: none;
     }
@@ -147,7 +147,7 @@
 
 @include mobile() {
   .hero {
-
+  
     &__container {
       width: 350px;
 
