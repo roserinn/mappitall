@@ -185,7 +185,6 @@ h6 {
   }
 }
 .hero {
-  background-size: cover;
   background-color: rgb(43, 43, 43);
   height: 100vh;
   position: relative;
