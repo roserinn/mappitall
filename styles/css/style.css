@@ -187,7 +187,6 @@ h6 {
 .hero {
   background-image: url(../../../public/assets/videos/poster/skyskraper.jpg);
   background-size: cover;
-  background-color: rgb(41, 41, 41);
   height: 100vh;
   position: relative;
   overflow-y: hidden;
