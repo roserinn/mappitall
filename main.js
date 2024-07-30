@@ -140,25 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  function playVideosInView() {
-    const videos = document.querySelectorAll('.callToAction video');
-    videos.forEach(video => {
-      const videoPosition = video.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (videoPosition < windowHeight && videoPosition >= 0) {
-        if (video.paused) {
-          video.play();
-        }
-      } else {
-        if (!video.paused) {
-          video.pause();
-        }
-      }
-    });
-  }
-
-
   function onScrollHandler() {
     const targetContainer = document.querySelector('.forWhat__container__slider');
     if (targetContainer) {
@@ -206,4 +187,55 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.style.display = 'none';
     }, 500); 
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slidesContainer = document.querySelector('.reviews__container__slider .container');
+  const prevButton = document.querySelector('.reviews__container__header .btnPrev');
+  const nextButton = document.querySelector('.reviews__container__header .btnNext');
+  const points = document.querySelectorAll('.reviews__container__slider .points__item');
+
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.reviews__container__slider .slide');
+  const totalSlides = slides.length;
+  let slideWidth = slides[0].offsetWidth;
+
+  function updateSlider() {
+    slideWidth = slides[0].offsetWidth;
+    slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    points.forEach((point, index) => {
+      point.style.backgroundColor = index === currentIndex ? 'rgb(8, 21, 55)' : '#ccc';
+    });
+  }
+
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = totalSlides - 1;
+    }
+    updateSlider();
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateSlider();
+  });
+
+  points.forEach((point, index) => {
+    point.addEventListener('click', () => {
+      currentIndex = index;
+      updateSlider();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    updateSlider();
+  });
+
+  updateSlider(); // Initial call to set up the slider position and points
 });

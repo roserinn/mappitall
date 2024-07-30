@@ -1,0 +1,277 @@
+.reviews {
+  &__container {
+    margin: 100px auto;
+    width: 1200px;
+    overflow: hidden;
+
+    &__header {
+      margin-bottom: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        text-transform: uppercase;
+        color: $gray;
+      }
+
+      h2 {
+        font-size: 3rem;
+        font-weight: $fontWeightBold;
+        line-height: 60px;
+        color: $brandColor;
+      }
+
+      &__sliderBtn {
+        display: flex;
+        gap: 15px;
+
+        button {
+          width: 50px;
+          height: 50px;
+          background-color: $lightGray;
+          transition: all $transitionDuration ease;
+          border-radius: 50px;
+
+          &:hover {
+            background-color: $brandColor;
+
+            img {
+              filter: invert(100%) sepia(0%) hue-rotate(7deg) brightness(116%) contrast(100%);
+            }
+          }
+        }
+      }
+    }
+
+    &__slider {
+      position: relative;
+
+      .container {
+        display: flex;
+        width: 1200px;
+        margin-bottom: 30px;
+        transition: transform 0.5s ease-in-out;
+
+        .slide {
+          min-width: 1200px;
+          border-radius: $borderRadius;
+          padding: 50px;
+
+          &__container {
+            display: flex;
+            justify-content: space-between;
+
+            .card {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              padding: 20px;
+              flex: 1 1 300px;
+              max-width: 350px;
+              box-shadow: 3px 4px 20px rgba(43, 51, 136, 0.145);
+              background-color: #F9FAFB;
+              border-radius: 20px;
+
+              &__container {
+                background-color: $white;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                padding: 30px;
+                border-radius: 20px;
+
+                &__title {
+                  color: green;
+                  text-decoration: underline;
+                  font-size: 1.2rem;
+                  line-height: 20px;
+                  font-weight: $fontWeightBold;
+                }
+
+                &__rating {
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+                }
+
+                .stars {
+                  color: rgb(219, 179, 0);
+                }
+
+                .date {
+                  color: gray;
+                }
+
+                &__review {
+                  font-style: italic;
+                  line-height: 18px;
+                }
+              }
+
+              &__link {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                a {
+                  color: $brandColor;
+                  font-size: 1.2rem;
+                  font-weight: $fontWeightBold;
+                }
+
+              }
+
+            }
+          }
+        }
+
+      }
+
+      .points {
+        display: flex;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%);
+        gap: 10px;
+        cursor: pointer;
+
+        &__item {
+          border-radius: $borderRadius;
+          background-color: $brandColor;
+          height: 10px;
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+@include laptop() {
+  .reviews {
+    &__container {
+      margin: 70px auto;
+      width: 1000px;
+  
+      &__header {
+        margin-bottom: 50px;
+
+        span {
+          font-size: 1rem;
+        }
+  
+        h2 {
+          font-size: 2rem;
+          line-height: 40px;
+        }
+      }
+  
+      &__slider {
+        position: relative;
+  
+        .container {
+          width: 1000px;
+      
+          .slide {
+            min-width: 1000px;
+      
+            &__container {
+    
+              .card {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                flex: 1 1 300px;
+                max-width: 350px;
+                box-shadow: 3px 4px 20px rgba(43, 51, 136, 0.145);
+                background-color: #F9FAFB;
+                border-radius: 20px;
+  
+                &__container {
+                  background-color: $white;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  gap: 20px;
+                  padding: 30px;
+                  border-radius: 20px;
+  
+                  &__title {
+                    color: green;
+                    text-decoration: underline;
+                    font-size: 1.2rem;
+                    line-height: 20px;
+                    font-weight: $fontWeightBold;
+                  }
+  
+                  &__rating {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                  }
+  
+                  .stars {
+                    color: rgb(219, 179, 0);
+                  }
+  
+                  .date {
+                    color: gray;
+                  }
+  
+                  &__review {
+                    font-style: italic;
+                    line-height: 18px;
+                  }
+                }
+  
+                &__link {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+  
+                  a {
+                    color: $brandColor;
+                    font-size: 1.2rem;
+                    font-weight: $fontWeightBold;
+                  }
+  
+                }
+  
+              }
+            }
+          }
+  
+        }
+  
+        .points {
+          display: flex;
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          transform: translate(-50%);
+          gap: 10px;
+          cursor: pointer;
+  
+          &__item {
+            border-radius: $borderRadius;
+            background-color: $brandColor;
+            height: 10px;
+            width: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet() {
+
+}
+
+@include mobile() {
+
+}
