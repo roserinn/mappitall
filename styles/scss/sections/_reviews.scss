@@ -181,28 +181,13 @@
             &__container {
     
               .card {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                padding: 20px;
-                flex: 1 1 300px;
-                max-width: 350px;
-                box-shadow: 3px 4px 20px rgba(43, 51, 136, 0.145);
-                background-color: #F9FAFB;
-                border-radius: 20px;
+                max-width: 280px;
+             
   
                 &__container {
-                  background-color: $white;
-                  display: flex;
-                  flex-direction: column;
-                  align-items: flex-start;
-                  gap: 20px;
-                  padding: 30px;
-                  border-radius: 20px;
+                  padding: 20px;
   
                   &__title {
-                    color: green;
-                    text-decoration: underline;
                     font-size: 1.2rem;
                     line-height: 20px;
                     font-weight: $fontWeightBold;
@@ -242,7 +227,7 @@
                 }
   
               }
-            }
+            } 
           }
   
         }
@@ -269,9 +254,142 @@
 }
 
 @include tablet() {
+  .reviews {
+    &__container {
+      margin: 70px auto;
+      width: 500px;
+  
+      &__header {
+        margin-bottom: 40px;
+      }
+  
+      &__slider {
+        .container {
+          width: 500px;
+      
+          .slide {
+            min-width: 500px;
+      
+            &__container {
+         flex-direction: column;
+         gap: 20px;
 
+              .card {
+                max-width: 100%;
+             
+  
+                &__container {
+                  padding: 10px;
+  
+                  &__title {
+                    font-size: 1.1rem;
+                    line-height: 20px;
+                    font-weight: $fontWeightBold;
+                  }
+  
+                  &__rating {
+                    gap: 10px;
+                  }
+                }
+  
+                &__link {
+  
+                  a {
+                    font-size: 1.1rem;
+                  }
+  
+                }
+  
+              }
+            } 
+          }
+  
+        }
+      }
+    }
+  }
 }
 
 @include mobile() {
+  .reviews {
+    &__container {
+      margin: 70px auto;
+      width: 350px;
+  
+      &__header {
+        span {
+          font-size: .9rem;
+        }
+  
+        h2 {
+          font-size: 1.5rem;
+          line-height: 30px;
+        }
 
+        margin-bottom: 40px;
+        &__sliderBtn {
+          gap: 10px;
+  
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            img {
+              width: 17px;
+            }
+          }
+        }
+      }
+  
+      &__slider {
+        .container {
+          width: 100%;
+      
+          .slide {
+            padding: 0;
+            min-width: 100%;
+      
+            &__container {
+         flex-direction: column;
+         gap: 20px;
+
+              .card {
+                max-width: 350px;
+                box-shadow: none;
+             
+  
+                &__container {
+                  padding: 10px;
+                  font-size: .9rem;
+  
+                  &__title {
+                    font-size: 1.1rem;
+                    line-height: 20px;
+                    font-weight: $fontWeightBold;
+                  }
+  
+                  &__rating {
+                font-size: .7rem;
+                    gap: 10px;
+                  }
+                }
+  
+                &__link {
+  
+                  a {
+                    font-size: 1.1rem;
+                  }
+  
+                }
+  
+              }
+            } 
+          }
+  
+        }
+      }
+    }
+  }
 }

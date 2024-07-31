@@ -490,9 +490,6 @@ h6 {
     font-size: 1.5rem;
     line-height: 30px;
   }
-  .forWhat__container__header__sliderBtn {
-    gap: 10px;
-  }
   .forWhat__container__header__sliderBtn button {
     width: 30px;
     height: 30px;
@@ -1425,28 +1422,12 @@ h6 {
     min-width: 1000px;
   }
   .reviews__container__slider .container .slide__container .card {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    flex: 1 1 300px;
-    max-width: 350px;
-    box-shadow: 3px 4px 20px rgba(43, 51, 136, 0.145);
-    background-color: #F9FAFB;
-    border-radius: 20px;
+    max-width: 280px;
   }
   .reviews__container__slider .container .slide__container .card__container {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 30px;
-    border-radius: 20px;
+    padding: 20px;
   }
   .reviews__container__slider .container .slide__container .card__container__title {
-    color: green;
-    text-decoration: underline;
     font-size: 1.2rem;
     line-height: 20px;
     font-weight: 600;
@@ -1490,6 +1471,102 @@ h6 {
     background-color: rgb(8, 21, 55);
     height: 10px;
     width: 10px;
+  }
+}
+@media (max-width: 1000px) {
+  .reviews__container {
+    margin: 70px auto;
+    width: 500px;
+  }
+  .reviews__container__header {
+    margin-bottom: 40px;
+  }
+  .reviews__container__slider .container {
+    width: 500px;
+  }
+  .reviews__container__slider .container .slide {
+    min-width: 500px;
+  }
+  .reviews__container__slider .container .slide__container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .reviews__container__slider .container .slide__container .card {
+    max-width: 100%;
+  }
+  .reviews__container__slider .container .slide__container .card__container {
+    padding: 10px;
+  }
+  .reviews__container__slider .container .slide__container .card__container__title {
+    font-size: 1.1rem;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  .reviews__container__slider .container .slide__container .card__container__rating {
+    gap: 10px;
+  }
+  .reviews__container__slider .container .slide__container .card__link a {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 501px) {
+  .reviews__container {
+    margin: 70px auto;
+    width: 350px;
+  }
+  .reviews__container__header {
+    margin-bottom: 40px;
+  }
+  .reviews__container__header span {
+    font-size: 0.9rem;
+  }
+  .reviews__container__header h2 {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  .reviews__container__header__sliderBtn {
+    gap: 10px;
+  }
+  .reviews__container__header__sliderBtn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+  }
+  .reviews__container__header__sliderBtn button img {
+    width: 17px;
+  }
+  .reviews__container__slider .container {
+    width: 100%;
+  }
+  .reviews__container__slider .container .slide {
+    padding: 0;
+    min-width: 100%;
+  }
+  .reviews__container__slider .container .slide__container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .reviews__container__slider .container .slide__container .card {
+    max-width: 350px;
+    box-shadow: none;
+  }
+  .reviews__container__slider .container .slide__container .card__container {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  .reviews__container__slider .container .slide__container .card__container__title {
+    font-size: 1.1rem;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  .reviews__container__slider .container .slide__container .card__container__rating {
+    font-size: 0.7rem;
+    gap: 10px;
+  }
+  .reviews__container__slider .container .slide__container .card__link a {
+    font-size: 1.1rem;
   }
 }
 .contacts__container {

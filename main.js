@@ -95,8 +95,7 @@ setBackgroundImages();
 
 
 document.addEventListener('DOMContentLoaded', () => {
-      
-  // Инициализация слайдера
+
   function initializeSlider() {
     const __ms = document.querySelector('.forWhat__container__slider');
     const __msSlider = new MicroSlider(__ms, {
@@ -151,14 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.removeEventListener('scroll', onScrollHandler);
       }
     }
-
-    playVideosInView(); 
   }
 
   window.addEventListener('scroll', onScrollHandler);
-  window.addEventListener('resize', playVideosInView);
-  window.addEventListener('load', playVideosInView);
-  playVideosInView();
 });
 
 
