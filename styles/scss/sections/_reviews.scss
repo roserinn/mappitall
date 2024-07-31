@@ -155,83 +155,83 @@
     &__container {
       margin: 70px auto;
       width: 1000px;
-  
+
       &__header {
         margin-bottom: 50px;
 
         span {
           font-size: 1rem;
         }
-  
+
         h2 {
           font-size: 2rem;
           line-height: 40px;
         }
       }
-  
+
       &__slider {
         position: relative;
-  
+
         .container {
           width: 1000px;
-      
+
           .slide {
             min-width: 1000px;
-      
+
             &__container {
-    
+
               .card {
                 max-width: 280px;
-             
-  
+
+
                 &__container {
                   padding: 20px;
-  
+
                   &__title {
                     font-size: 1.2rem;
                     line-height: 20px;
                     font-weight: $fontWeightBold;
                   }
-  
+
                   &__rating {
                     display: flex;
                     align-items: center;
                     gap: 20px;
                   }
-  
+
                   .stars {
                     color: rgb(219, 179, 0);
                   }
-  
+
                   .date {
                     color: gray;
                   }
-  
+
                   &__review {
                     font-style: italic;
                     line-height: 18px;
                   }
                 }
-  
+
                 &__link {
                   display: flex;
                   align-items: center;
                   gap: 10px;
-  
+
                   a {
                     color: $brandColor;
                     font-size: 1.2rem;
                     font-weight: $fontWeightBold;
                   }
-  
+
                 }
-  
+
               }
-            } 
+            }
           }
-  
+
         }
-  
+
         .points {
           display: flex;
           position: absolute;
@@ -240,7 +240,7 @@
           transform: translate(-50%);
           gap: 10px;
           cursor: pointer;
-  
+
           &__item {
             border-radius: $borderRadius;
             background-color: $brandColor;
@@ -258,52 +258,56 @@
     &__container {
       margin: 70px auto;
       width: 500px;
-  
+
       &__header {
         margin-bottom: 40px;
       }
-  
+
       &__slider {
+      
         .container {
           width: 500px;
-      
+
           .slide {
+            padding: 0;
             min-width: 500px;
-      
+          
+
             &__container {
-         flex-direction: column;
-         gap: 20px;
+              flex-direction: column;
+              gap: 20px;
 
               .card {
+                box-shadow: none;
                 max-width: 100%;
-             
-  
+
+
                 &__container {
                   padding: 10px;
-  
+
                   &__title {
                     font-size: 1.1rem;
                     line-height: 20px;
                     font-weight: $fontWeightBold;
                   }
-  
+
                   &__rating {
                     gap: 10px;
                   }
                 }
-  
+
                 &__link {
-  
+
                   a {
                     font-size: 1.1rem;
                   }
-  
+
                 }
-  
+
               }
-            } 
+            }
           }
-  
+
         }
       }
     }
@@ -315,79 +319,78 @@
     &__container {
       margin: 70px auto;
       width: 350px;
-  
+
       &__header {
         span {
           font-size: .9rem;
         }
-  
+
         h2 {
           font-size: 1.5rem;
           line-height: 30px;
         }
 
         margin-bottom: 40px;
+
         &__sliderBtn {
           gap: 10px;
-  
+
           button {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 30px;
             height: 30px;
+
             img {
               width: 17px;
             }
           }
         }
       }
-  
+
       &__slider {
         .container {
           width: 100%;
-      
+
           .slide {
-            padding: 0;
+
             min-width: 100%;
-      
+
             &__container {
-         flex-direction: column;
-         gap: 20px;
+              flex-direction: column;
+              gap: 20px;
 
               .card {
                 max-width: 350px;
-                box-shadow: none;
-             
-  
+
                 &__container {
                   padding: 10px;
                   font-size: .9rem;
-  
+
                   &__title {
                     font-size: 1.1rem;
                     line-height: 20px;
                     font-weight: $fontWeightBold;
                   }
-  
+
                   &__rating {
-                font-size: .7rem;
+                    font-size: .7rem;
                     gap: 10px;
                   }
                 }
-  
+
                 &__link {
-  
                   a {
                     font-size: 1.1rem;
                   }
-  
+
                 }
-  
+
               }
-            } 
+            }
           }
-  
+
         }
       }
     }
