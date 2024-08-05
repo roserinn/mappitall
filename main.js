@@ -233,3 +233,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateSlider(); // Initial call to set up the slider position and points
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const cardsContainer = document.querySelector('.benefits__container__cards');
+  const cards = document.querySelectorAll('.benefits__container__cards__card');
+  const btnPrev = document.querySelector('.benefits__container__header__sliderBtn .btnPrev');
+  const btnNext = document.querySelector('.benefits__container__header__sliderBtn .btnNext');
+  
+  let currentIndex = 0;
+
+  function showCard(index) {
+    cards.forEach((card, i) => {
+      card.classList.remove('active');
+      card.style.display = i === index ? 'block' : 'none';
+    });
+    setTimeout(() => {
+      cards[index].classList.add('active');
+    }, 10);
+    updateDots(index);
+  }
+
+  function createPaginationDots() {
+    const paginationContainer = document.createElement('div');
+    paginationContainer.classList.add('pagination');
+
+    cards.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.addEventListener('click', function () {
+        currentIndex = i;
+        showCard(currentIndex);
+      });
+      paginationContainer.appendChild(dot);
+    });
+
+    cardsContainer.appendChild(paginationContainer);
+  }
+
+  function updateDots(index) {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  btnPrev.addEventListener('click', function () {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : cards.length - 1;
+    showCard(currentIndex);
+  });
+
+  btnNext.addEventListener('click', function () {
+    currentIndex = (currentIndex < cards.length - 1) ? currentIndex + 1 : 0;
+    showCard(currentIndex);
+  });
+
+  function handleResize() {
+    if (window.innerWidth < 501) {
+      showCard(currentIndex);
+      createPaginationDots();
+    } else {
+      const pagination = document.querySelector('.pagination');
+      if (pagination) pagination.remove();
+
+      cards.forEach(card => {
+        card.style.display = 'block';
+        card.classList.remove('active');
+      });
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
+});
+
+

@@ -243,7 +243,7 @@ h6 {
 }
 .hero__container__title {
   text-transform: uppercase;
-  font-size: 7rem;
+  font-size: 6.5rem;
   line-height: 120px;
   font-weight: bold;
   font-family: "Space Grotesk", sans-serif;
@@ -633,6 +633,9 @@ h6 {
 .benefits__container__header {
   font-family: "Space Grotesk", sans-serif;
   margin: 0 auto 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .benefits__container__header span {
   text-transform: uppercase;
@@ -643,6 +646,30 @@ h6 {
   font-weight: 600;
   line-height: 60px;
   color: rgb(8, 21, 55);
+}
+.benefits__container__header__sliderBtn {
+  display: flex;
+  gap: 15px;
+  display: none;
+}
+.benefits__container__header__sliderBtn button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 234, 236);
+  transition: all 0.2s ease;
+  border-radius: 50px;
+}
+.benefits__container__header__sliderBtn button img {
+  width: 17px;
+}
+.benefits__container__header__sliderBtn button:hover {
+  background-color: rgb(8, 21, 55);
+}
+.benefits__container__header__sliderBtn button:hover img {
+  filter: invert(100%) sepia(0%) hue-rotate(7deg) brightness(116%) contrast(100%);
 }
 .benefits__container__cards {
   display: grid;
@@ -754,15 +781,25 @@ h6 {
     font-size: 1.5rem;
     line-height: 30px;
   }
+  .benefits__container__header__sliderBtn {
+    gap: 10px;
+    display: flex;
+  }
   .benefits__container__cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
   .benefits__container__cards__card {
     height: 280px;
     width: 100%;
     padding: 40px;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+  .benefits__container__cards__card.active {
+    opacity: 1;
+    transform: translateX(0);
   }
   .benefits__container__cards__card .cardHeader {
     margin-bottom: 20px;
@@ -773,6 +810,22 @@ h6 {
   .benefits__container__cards__card p {
     font-size: 1rem;
     line-height: 20px;
+  }
+  .benefits__container .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .benefits__container .pagination .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(152, 162, 179);
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .benefits__container .pagination .active {
+    background-color: rgb(8, 21, 55);
   }
 }
 .cases__container {
