@@ -238,12 +238,13 @@ h6 {
   transition: font-size 0.2s ease;
 }
 .hero__container__subtitle {
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   font-size: 1.5rem;
 }
 .hero__container__title {
-  text-transform: uppercase;
-  font-size: 6.5rem;
+  font-size: 7rem;
+  letter-spacing: 0.1rem;
   line-height: 120px;
   font-weight: bold;
   font-family: "Space Grotesk", sans-serif;
@@ -770,6 +771,7 @@ h6 {
 @media (max-width: 501px) {
   .benefits__container {
     width: 350px;
+    overflow-x: hidden;
   }
   .benefits__container__header {
     margin: 0 auto 30px;

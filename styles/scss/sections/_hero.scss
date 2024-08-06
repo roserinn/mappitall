@@ -56,13 +56,14 @@
     transition: font-size $transitionDuration ease;
 
     &__subtitle {
+      letter-spacing: .1rem;
       text-transform: uppercase;
       font-size: 1.5rem;
     }
 
     &__title {
-      text-transform: uppercase;
-      font-size: 6.5rem;
+      font-size: 7rem;
+      letter-spacing: .1rem;
       line-height: 120px;
       font-weight: bold;
       font-family: "Space Grotesk", sans-serif;

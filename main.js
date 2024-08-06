@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSlider(); // Initial call to set up the slider position and points
 });
 
-
+// ------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const cardsContainer = document.querySelector('.benefits__container__cards');
   const cards = document.querySelectorAll('.benefits__container__cards__card');
@@ -261,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cards.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.classList.add('dot');
+      if(i === 0) dot.classList.add('active');
       dot.addEventListener('click', function () {
         currentIndex = i;
         showCard(currentIndex);
@@ -289,9 +290,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function handleResize() {
-    if (window.innerWidth < 501) {
+    if (cardsContainer.clientWidth < 500) {
       showCard(currentIndex);
-      createPaginationDots();
+      if(!cardsContainer.contains(cardsContainer.querySelector('.pagination'))) {
+        createPaginationDots();
+      }
     } else {
       const pagination = document.querySelector('.pagination');
       if (pagination) pagination.remove();
