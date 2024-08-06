@@ -250,8 +250,10 @@ h6 {
   font-family: "Space Grotesk", sans-serif;
 }
 .hero__container__text {
-  font-size: 1.2rem;
-  margin-bottom: 100px;
+  font-size: 1.5rem;
+  width: 40%;
+  line-height: 30px;
+  margin-bottom: 80px;
 }
 .hero__container__button {
   background-color: rgb(255, 255, 255);
@@ -307,6 +309,7 @@ h6 {
   .hero__container__text {
     font-size: 1.1rem;
     margin-bottom: 70px;
+    width: 100%;
   }
 }
 @media (max-width: 501px) {
