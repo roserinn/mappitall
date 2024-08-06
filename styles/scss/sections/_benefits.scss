@@ -59,7 +59,7 @@
       gap: 30px;
 
       &__card {
-        box-shadow: 3px 4px 20px rgba(43, 51, 136, 0.145);
+        box-shadow: 3px 3px 20px rgba(43, 51, 136, 0.139);
         border-radius: 30px;
         height: 324px;
         width: 375px;
@@ -203,12 +203,15 @@
       &__cards {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 20px;
 
         &__card {
+          box-shadow: 0px 0px 10px 5px rgba(7, 1, 47, 0.029);
           height: 280px;
-          width: 100%;
-          padding: 40px;
+          width: 330px;
+          padding: 30px;
           transform: translateX(100%);
           transition: all 0.5s ease;
   

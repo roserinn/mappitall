@@ -20,6 +20,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .no-scroll {
@@ -50,6 +51,11 @@ body {
     width: 500px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 
     &__close {
       position: absolute;
@@ -82,22 +88,23 @@ body {
         }
       }
 
-      .header__button {
-        background-color: transparent;
-        color: $brandColorLight;
-        font-weight: $fontWeightBold;
-        padding: 10px 50px;
-        border: 1px solid $brandColorLight;
-        border-radius: $borderRadius;
-        transition: background-color $transitionDuration ease-in-out;
-        box-shadow: $boxShadow;
+    }
+    
+    .header__button {
+      background-color: transparent;
+      color: $brandColorLight;
+      font-weight: $fontWeightBold;
+      padding: 10px 50px;
+      border: 1px solid $brandColorLight;
+      border-radius: $borderRadius;
+      transition: background-color $transitionDuration ease-in-out;
+      box-shadow: $boxShadow;
 
-        &:hover {
-          background-color: $brandColorLight;
-          color: $white;
-        }
-
+      &:hover {
+        background-color: $brandColorLight;
+        color: $white;
       }
+
     }
   }
 }

@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 const sliderBg = [
   './assets/img/sectonImg/slider/1.png',
-  './assets/img/sectonImg/slider/1.png',
   './assets/img/sectonImg/slider/2.png',
   './assets/img/sectonImg/slider/3.png',
   './assets/img/sectonImg/slider/4.png',
@@ -183,56 +182,60 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const slidesContainer = document.querySelector('.reviews__container__slider .container');
-  const prevButton = document.querySelector('.reviews__container__header .btnPrev');
-  const nextButton = document.querySelector('.reviews__container__header .btnNext');
-  const points = document.querySelectorAll('.reviews__container__slider .points__item');
-
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.container');
+  const cards = document.querySelectorAll('.card');
+  const totalCards = cards.length;
+  const pointsContainer = document.querySelector('.reviews .points');
   let currentIndex = 0;
-  const slides = document.querySelectorAll('.reviews__container__slider .slide');
-  const totalSlides = slides.length;
-  let slideWidth = slides[0].offsetWidth;
 
-  function updateSlider() {
-    slideWidth = slides[0].offsetWidth;
-    slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    points.forEach((point, index) => {
-      point.style.backgroundColor = index === currentIndex ? 'rgb(8, 21, 55)' : '#ccc';
-    });
+  // Создаем точки
+  for (let i = 0; i < totalCards; i++) {
+    const point = document.createElement('div');
+    point.classList.add('points__item');
+    if (i === 0) point.classList.add('active');
+    pointsContainer.appendChild(point);
   }
 
-  prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-    } else {
-      currentIndex = totalSlides - 1;
-    }
-    updateSlider();
-  });
+  const points = pointsContainer.querySelectorAll('.points__item');
 
-  nextButton.addEventListener('click', () => {
-    if (currentIndex < totalSlides - 1) {
-      currentIndex++;
-    } else {
-      currentIndex = 0;
-    }
-    updateSlider();
-  });
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseFloat(window.getComputedStyle(container).gap);
+    container.style.transform = `translateX(-${(cardWidth + gap) * currentIndex}px)`;
 
+    points.forEach(point => point.classList.remove('active'));
+    points[currentIndex].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalCards;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+    updateSlider();
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateSlider();
+  }
+
+  document.querySelector('.reviews .btnNext').addEventListener('click', nextSlide);
+  document.querySelector('.reviews .btnPrev').addEventListener('click', prevSlide);
+
+  // Добавляем слушатель событий на точки
   points.forEach((point, index) => {
-    point.addEventListener('click', () => {
-      currentIndex = index;
-      updateSlider();
-    });
+    point.addEventListener('click', () => goToSlide(index));
   });
 
-  window.addEventListener('resize', () => {
-    updateSlider();
-  });
-
-  updateSlider(); // Initial call to set up the slider position and points
+  window.addEventListener('resize', updateSlider);
+  updateSlider(); // Первоначальная установка
 });
+
+
 
 // ------------------------------
 document.addEventListener('DOMContentLoaded', function () {
