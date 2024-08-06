@@ -209,12 +209,11 @@
           height: 280px;
           width: 100%;
           padding: 40px;
-          transform: translateX(100%);
           transition: all 0.5s ease;
   
           &.active {
             opacity: 1;
-            transform: translateX(0);
+       
           }
 
 
