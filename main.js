@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const pointsContainer = document.querySelector('.reviews .points');
   let currentIndex = 0;
 
-  // Создаем точки
   for (let i = 0; i < totalCards; i++) {
     const point = document.createElement('div');
     point.classList.add('points__item');
@@ -226,17 +225,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.reviews .btnNext').addEventListener('click', nextSlide);
   document.querySelector('.reviews .btnPrev').addEventListener('click', prevSlide);
 
-  // Добавляем слушатель событий на точки
   points.forEach((point, index) => {
     point.addEventListener('click', () => goToSlide(index));
   });
 
   window.addEventListener('resize', updateSlider);
-  updateSlider(); // Первоначальная установка
+  updateSlider(); 
 });
 
 
-
+     
 // ------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const cardsContainer = document.querySelector('.benefits__container__cards');
@@ -313,3 +311,91 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+////////////////////////////////////////////////////
+
+
+const slides = document.querySelectorAll('.casesSlide');
+const nextBtn = document.querySelectorAll('.next-slide');
+const prevBtn = document.querySelectorAll('.prev-slide');
+const points = document.querySelectorAll('.points__item');
+
+let currentSlide = 0;
+
+function animateIn(slide) {
+  const video = slide.querySelector('video');
+  const content = slide.querySelector('.slide__content');
+  const slideInfo = document.querySelectorAll('.slideInfo'); 
+  const points = document.querySelectorAll('.points');
+
+  gsap.fromTo(video, { opacity: 0 }, { opacity: 1, duration: 1 });
+  gsap.fromTo(content, { x: '100%', opacity: 0 }, { x: '0%', opacity: 1, duration: 1, delay: 1.3});
+  gsap.fromTo(slideInfo, { opacity: 0}, { opacity: 1, delay: 1.7, duration: 1, stagger: .2 });
+  gsap.fromTo(points, { opacity: 0}, { opacity: 1, duration: .7, delay: 3.5 }); 
+}
+
+function animateOut(slide, callback) {
+  const video = slide.querySelector('video');
+  const content = slide.querySelector('.slide__content');
+  const slideInfo = document.querySelectorAll('.slideInfo'); 
+  const points = document.querySelectorAll('.points');
+
+
+  gsap.to(video, { opacity: 0, duration: 1, onComplete: callback });
+  gsap.to(content, { x: '100%', opacity: 0, duration: 1 });
+  gsap.to(slideInfo, { opacity: 1, duration: 1, onComplete: callback });
+  gsap.to(points, { opacity: 1, duration: 1, onComplete: callback });
+}
+
+function showSlide(index) {
+  if (index >= slides.length) {
+    index = 0;
+  } else if (index < 0) {
+    index = slides.length - 1;
+  }
+
+  const newSlide = slides[index]; 
+  const oldSlide = slides[currentSlide];
+
+  if (newSlide !== oldSlide) {
+    animateOut(oldSlide, () => {
+      oldSlide.style.display = 'none';
+      newSlide.style.display = 'block';
+      animateIn(newSlide);
+      currentSlide = index;
+      updatePoints(index);
+    });
+  }
+}
+
+function updatePoints(index) {
+  points.forEach((point, idx) => {
+    point.classList.toggle('active', idx === index);
+  });
+}
+
+nextBtn.forEach(button => {
+  button.addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+  });
+});
+
+prevBtn.forEach(button => {
+  button.addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+  });
+});
+
+points.forEach(point => {
+  point.addEventListener('click', () => {
+    const index = parseInt(point.getAttribute('data-index'));
+    showSlide(index);
+  });
+});
+slides.forEach((slide, index) => {
+  if (index !== currentSlide) {
+    slide.style.display = 'none';
+  }
+});
+
+animateIn(slides[currentSlide]);
+updatePoints(currentSlide); 

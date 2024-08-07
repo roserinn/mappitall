@@ -6,6 +6,8 @@
 
     &__header {
       width: 1200px;
+      display: flex;
+      align-items: center;
       margin: 0 auto 50px;
 
       span {
@@ -36,11 +38,11 @@
           background-image: url('../../../public/assets/img/sectonImg/cases/1545147762023\ 3.png');
           height: 100%;
           width: 30%;
-          position: absolute; 
+          position: absolute;
           top: 0;
           right: 0;
           z-index: $ui-index-1;
-          padding: 50px 100px;
+          padding: 50px;
 
           h3 {
             font-size: 2rem;
@@ -59,33 +61,59 @@
             font-weight: $fontWeightBold;
             margin-bottom: 30px;
             letter-spacing: .1rem;
-          } 
+          }
 
           .technologies {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 9px; 
-            margin-bottom: 130px;
-.technology {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 10px 5px 5px;
-  border: 1px solid $white;
-  border-radius: $borderRadius;
-  font-size: .8rem;
-}
+            gap: 9px;
+            margin-bottom: 100px;
+
+            .technology {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              padding: 5px 10px 5px 5px;
+              border: 1px solid $white;
+              border-radius: $borderRadius;
+              font-size: .8rem;
+            }
           }
-          
+
           .points {
             display: flex;
             align-items: center;
-            gap: 7px;
-            &__item {
-              width: 10px;
-              height: 10px;
-              border-radius: $borderRadius;
-              background-color: rgb(196, 196, 196);
+            justify-content: center;
+            gap: 30px;
+            position: inherit;
+
+            button {
+              cursor: pointer;
+              background-color: transparent;
+              img {
+                width: 40px;
+              
+              }
+            }
+           
+
+            &__container {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              .points__item {
+                width: 10px;
+                height: 10px;
+                border-radius: $borderRadius;
+                background-color: rgba(196, 196, 196, 0.413);
+                cursor: pointer;
+
+                &.active { 
+                  background-color: $white;
+                }
+              }
             }
           }
         }
@@ -117,10 +145,23 @@
           font-size: 2rem;
           line-height: 40px;
         }
+
+        &__sliderBtn {
+          gap: 10px;
+        }
       }
 
       &__slider {
-        height: 600px;
+        .slide {
+          &__content {
+            width: 40%;
+
+            h3 {
+              font-size: 1.8rem;
+              margin-bottom: 25px;
+            }
+          }
+        }
       }
     }
   }
@@ -129,10 +170,11 @@
 @include tablet() {
   .cases {
     &__container {
-      margin: 100px 0 50px;
+      margin: 70px 0;
 
       &__header {
         width: 500px;
+        margin: 0 auto 30px;
 
         span {
           font-size: 1rem;
@@ -140,23 +182,42 @@
 
         h2 {
           font-size: 2rem;
-          line-height: 30px;
-          width: 100%;
+          line-height: 40px;
         }
       }
 
       &__slider {
         height: 500px;
-        display: flex;
-        overflow: hidden;
-        position: relative;
 
         .slide {
-          video {
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+          width: 100%;
+
+          &__content {
+            padding: 50px;
+            width: 50%;
+
+            h3 {
+              font-size: 1.5rem;
+              margin-bottom: 10px;
+            }
+
+            p {
+              font-size: .7rem;
+              line-height: 16px;
+              margin-bottom: 20px;
+            }
+
+            h4 {
+              margin-bottom: 20px;
+            }
+
+            .technologies {
+              margin-bottom: 70px;
+
+              .technology {
+                font-size: .5rem;
+              }
+            }
           }
         }
       }
@@ -164,16 +225,17 @@
   }
 }
 
+
 @include mobile() {
   .cases {
     &__container {
-      margin: 100px 0;
 
       &__header {
         width: 350px;
+        margin: 0 auto 30px;
 
         span {
-          font-size: .9rem;
+          font-size: 0.9rem;
         }
 
         h2 {
@@ -184,6 +246,72 @@
 
       &__slider {
         height: 300px;
+
+        .slide {
+          &__content {
+            width: 50%;
+            padding: 20px;
+
+            h3 {
+              font-size: 1.4rem;
+              margin-bottom: 10px;
+            }
+
+            p {
+              line-height: 14px;
+              margin-bottom: 10px;
+            }
+
+            h4 {
+              font-size: .8rem;
+              margin-bottom: 10px;
+            }
+
+            .technologies {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 5px;
+              margin-bottom: 30px;
+
+              .technology {
+                gap: 2px;
+                padding: 2px 5px 2px 2px;
+                font-size: .5rem;
+
+                img {
+                  width: 10px;
+                }
+              }
+            }
+
+            .points {
+              gap: 30px;
+
+              img {
+                width: 20px;
+              }
+
+              &__container {
+                gap: 5px;
+
+                .points__item {
+                  width: 5px;
+                  height: 5px;
+                }
+              }
+            }
+          }
+
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
       }
     }
   }
