@@ -361,9 +361,15 @@ h6 {
 .forWhat__container__header__sliderBtn button {
   width: 50px;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(233, 234, 236);
   transition: all 0.3s ease;
   border-radius: 50px;
+}
+.forWhat__container__header__sliderBtn button img {
+  width: 25px;
 }
 .forWhat__container__header__sliderBtn button:hover {
   background-color: rgb(8, 21, 55);
@@ -437,6 +443,58 @@ h6 {
   border: 1px solid rgb(8, 21, 55);
 }
 
+.pulseButton__container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 6;
+}
+.pulseButton__container .pulseButton {
+  background: #717BBC;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.pulseButton__container .pulseButton img {
+  width: 37px;
+}
+.pulseButton__container .pulseButton::before, .pulseButton__container .pulseButton::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: rgba(113, 123, 188, 0.33);
+  animation: pulse 3s infinite;
+  z-index: -1;
+}
+.pulseButton__container .pulseButton::after {
+  animation-delay: 1s;
+}
+.pulseButton__container .pulseButton:hover {
+  background: #6776d4;
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
 @media (max-width: 1220px) {
   .forWhat__container__header {
     width: 1000px;
@@ -516,6 +574,17 @@ h6 {
     font-size: 0.9rem;
     line-height: 17px;
     margin-bottom: 5px;
+  }
+  .pulseButton__container {
+    bottom: 20px;
+    right: 20px;
+  }
+  .pulseButton__container .pulseButton {
+    width: 50px;
+    height: 50px;
+  }
+  .pulseButton__container .pulseButton img {
+    width: 25px;
   }
 }
 .callToAction {
@@ -783,9 +852,12 @@ h6 {
     font-size: 1.5rem;
     line-height: 30px;
   }
-  .benefits__container__header__sliderBtn {
-    gap: 10px;
-    display: flex;
+  .benefits__container__header__sliderBtn button {
+    width: 30px;
+    height: 30px;
+  }
+  .benefits__container__header__sliderBtn button img {
+    width: 17px;
   }
   .benefits__container__cards {
     display: flex;
@@ -856,7 +928,7 @@ h6 {
   width: 70%;
 }
 .cases__container__slider {
-  height: 600px;
+  height: 700px;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -868,12 +940,12 @@ h6 {
   color: rgb(255, 255, 255);
   background-image: url("../../../assets/img/sectonImg/cases/1545147762023 3.png");
   height: 100%;
-  width: 30%;
+  width: 40%;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
-  padding: 50px;
+  padding: 50px 70px;
 }
 .cases__container__slider .slide__content h3 {
   font-size: 2rem;
@@ -1020,7 +1092,7 @@ h6 {
     font-size: 0.9rem;
   }
   .cases__container__header h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 30px;
   }
   .cases__container__slider {
@@ -1031,7 +1103,7 @@ h6 {
     padding: 20px;
   }
   .cases__container__slider .slide__content h3 {
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin-bottom: 10px;
   }
   .cases__container__slider .slide__content p {
@@ -1040,14 +1112,14 @@ h6 {
   }
   .cases__container__slider .slide__content h4 {
     font-size: 0.8rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .cases__container__slider .slide__content .technologies {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   .cases__container__slider .slide__content .technologies .technology {
     gap: 2px;
@@ -1058,25 +1130,19 @@ h6 {
     width: 10px;
   }
   .cases__container__slider .slide__content .points {
-    gap: 30px;
+    gap: 10px;
   }
-  .cases__container__slider .slide__content .points img {
+  .cases__container__slider .slide__content .points button img {
     width: 20px;
   }
   .cases__container__slider .slide__content .points__container {
+    display: flex;
+    align-items: center;
     gap: 5px;
   }
   .cases__container__slider .slide__content .points__container .points__item {
     width: 5px;
     height: 5px;
-  }
-  .cases__container__slider .slide video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 }
 .process__container {
@@ -1263,6 +1329,9 @@ h6 {
   background-color: rgb(233, 234, 236);
   transition: all 0.3s ease;
   border-radius: 50px;
+}
+.reviews__container__header__sliderBtn button img {
+  width: 25px;
 }
 .reviews__container__header__sliderBtn button:hover {
   background-color: rgb(8, 21, 55);
@@ -1722,9 +1791,12 @@ h6 {
     font-size: 0.6rem;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
 }
 
 .no-scroll {

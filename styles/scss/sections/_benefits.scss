@@ -195,8 +195,15 @@
 
         
         &__sliderBtn {
-          gap: 10px;
-          display: flex;
+
+          button {
+            width: 30px;
+            height: 30px;
+
+            img {
+              width: 17px;
+            }
+          }
         }
       }
 

@@ -36,6 +36,10 @@
           transition: all $transitionDuration ease;
           border-radius: 50px;
 
+          img {
+            width: 25px;
+          }
+
           &:hover {
             background-color: $brandColor;
 
@@ -51,10 +55,10 @@
       position: relative;
       overflow: hidden;
       margin: 0 auto;
+
       .container {
         width: 1200px;
         margin: 30px auto;
-        //overflow-x: hidden;
         display: flex;
         transition: transform $transitionDuration ease-in-out;
         gap: 10px;

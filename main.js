@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const pulseButtonContainer = document.querySelector('.pulseButton');
+  const firstSection = document.querySelector('.hero');
+
+  function toggleButtonVisibility() {
+    const rect = firstSection.getBoundingClientRect();
+    if (rect.bottom <= 0) {
+      pulseButtonContainer.style.display = 'flex';
+    } else {
+      pulseButtonContainer.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('scroll', toggleButtonVisibility);
+  toggleButtonVisibility();
+});
+
+
 
 let hasSwitchedToSmallVideo = false;
 let hasSwitchedToLargeVideo = false;
@@ -35,6 +53,27 @@ function checkScreenWidth(resize = false) {
       hasSwitchedToSmallVideo = false;
   }
 }
+
+// pulse button 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const pulseButtonContainer = document.querySelector('.pulseButton__container');
+  const sections = document.querySelectorAll('section');
+
+  function checkSection() {
+    let found = false;
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 0 && rect.bottom >= 0) {
+        found = true;
+      }
+    });
+    pulseButtonContainer.style.display = found ? 'block' : 'none';
+  }
+
+  window.addEventListener('scroll', checkSection);
+  checkSection();
+});
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
