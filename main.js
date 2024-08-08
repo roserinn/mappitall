@@ -57,18 +57,16 @@ function checkScreenWidth(resize = false) {
 // pulse button 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const pulseButtonContainer = document.querySelector('.pulseButton__container');
-  const sections = document.querySelectorAll('section');
+  const pulseButtonContainer = document.querySelector('.pulseButton');
+  const sections = document.querySelector('.hero');
 
   function checkSection() {
-    let found = false;
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= 0 && rect.bottom >= 0) {
-        found = true;
-      }
-    });
-    pulseButtonContainer.style.display = found ? 'block' : 'none';
+    let found = true;
+    const rect = sections.getBoundingClientRect();
+    if (rect.top <= 0 && rect.bottom >= 0) {
+      found = false;
+    }
+    pulseButtonContainer.style.display = found ? 'flex' : 'none';
   }
 
   window.addEventListener('scroll', checkSection);
@@ -422,6 +420,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  let scrennWidth = window.screen.width;
+  window.addEventListener('resize', () => {
+    if(window.innerWidth !== scrennWidth) {
+      scrennWidth = window.innerWidth;
+      handleResize();
+    }
+  });
   handleResize();
 });
 
@@ -483,8 +488,11 @@ function showSlide(index) {
 }
 
 function updatePoints(index) {
+  points.forEach(point => point.classList.remove('active'));
   points.forEach((point, idx) => {
-    point.classList.toggle('active', idx === index);
+    if(+point.dataset.index === index) {
+      points[idx].classList.add('active');
+    }
   });
 }
 
