@@ -175,6 +175,7 @@
 
       &__slider {
         width: 1000px;
+
         .container {
           width: 1000px;
         }
@@ -213,6 +214,7 @@
 
       &__slider {
         width: 500px;
+
         .container {
           width: 500px;
 
@@ -242,8 +244,6 @@
                   font-size: .7rem;
                   color: gray;
                 }
-
-
               }
 
               &__review {
@@ -260,6 +260,8 @@
 @include mobile() {
   .reviews {
     &__container {
+      margin: 20px auto;
+
       &__header {
         width: 350px;
 
@@ -287,6 +289,7 @@
 
       &__slider {
         width: 350px;
+
         .container {
           width: 350px;
 

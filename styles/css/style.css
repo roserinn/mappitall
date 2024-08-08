@@ -676,7 +676,7 @@ h6 {
 }
 @media (max-width: 501px) {
   .callToAction {
-    height: 600px;
+    height: 500px;
   }
   .callToAction__container {
     width: 350px;
@@ -851,6 +851,9 @@ h6 {
   .benefits__container__header h2 {
     font-size: 1.5rem;
     line-height: 30px;
+  }
+  .benefits__container__header__sliderBtn {
+    display: flex;
   }
   .benefits__container__header__sliderBtn button {
     width: 30px;
@@ -1110,6 +1113,7 @@ h6 {
   .cases__container__slider .slide__content p {
     line-height: 14px;
     margin-bottom: 10px;
+    font-size: 0.6rem;
   }
   .cases__container__slider .slide__content h4 {
     font-size: 0.8rem;
@@ -1147,7 +1151,7 @@ h6 {
   }
 }
 .process__container {
-  margin: 100px auto;
+  margin: 0 auto 100px;
   width: 1200px;
 }
 .process__container__header {
@@ -1215,7 +1219,7 @@ h6 {
 
 @media (max-width: 1220px) {
   .process__container {
-    margin: 150px auto 100px;
+    margin: 0 auto 50px;
     width: 1000px;
   }
   .process__container__header span {
@@ -1243,7 +1247,7 @@ h6 {
 }
 @media (max-width: 1000px) {
   .process__container {
-    margin: 50px auto;
+    margin: 0 auto;
     width: 500px;
   }
   .process__container__steps .road {
@@ -1267,7 +1271,7 @@ h6 {
 }
 @media (max-width: 501px) {
   .process__container {
-    margin: 50px auto;
+    margin: 20px auto;
     width: 350px;
   }
   .process__container span {
@@ -1498,6 +1502,9 @@ h6 {
   }
 }
 @media (max-width: 501px) {
+  .reviews__container {
+    margin: 20px auto;
+  }
   .reviews__container__header {
     width: 350px;
   }
@@ -1822,7 +1829,7 @@ body {
   opacity: 0;
   display: none;
   transition: all 0.5s ease;
-  padding: 80px;
+  padding: 80px 200px 80px 80px;
 }
 .menu__container {
   width: 500px;

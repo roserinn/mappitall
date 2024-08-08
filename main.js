@@ -26,31 +26,31 @@ function checkScreenWidth(resize = false) {
   const screenWidth = window.innerWidth;
 
   if (screenWidth <= 1000 && !hasSwitchedToSmallVideo) {
-      const currentTime = video.currentTime;
-      videoSource.src = './assets/videos/skyskraperMobile.mp4';
-      video.poster = './assets/videos/poster/skyskraperMobile.jpg'; // Set poster for small screen
-      video.load();
-      if (resize) {
-          video.currentTime = currentTime;
-      }
-      video.play().catch(error => {
-          console.log("Error playing video:", error);
-      });
-      hasSwitchedToSmallVideo = true;
-      hasSwitchedToLargeVideo = false;
+    const currentTime = video.currentTime;
+    videoSource.src = './assets/videos/skyskraperMobile.mp4';
+    video.poster = './assets/videos/poster/skyskraperMobile.jpg'; // Set poster for small screen
+    video.load();
+    if (resize) {
+      video.currentTime = currentTime;
+    }
+    video.play().catch(error => {
+      console.log("Error playing video:", error);
+    });
+    hasSwitchedToSmallVideo = true;
+    hasSwitchedToLargeVideo = false;
   } else if (screenWidth > 1000 && !hasSwitchedToLargeVideo) {
-      const currentTime = video.currentTime;
-      videoSource.src = './assets/videos/skyskraper.mp4';
-      video.poster = './assets/videos/poster/skyskraper.jpg'; // Set poster for large screen
-      video.load();
-      if (resize) {
-          video.currentTime = currentTime;
-      }
-      video.play().catch(error => {
-          console.log("Error playing video:", error);
-      });
-      hasSwitchedToLargeVideo = true;
-      hasSwitchedToSmallVideo = false;
+    const currentTime = video.currentTime;
+    videoSource.src = './assets/videos/skyskraper.mp4';
+    video.poster = './assets/videos/poster/skyskraper.jpg'; // Set poster for large screen
+    video.load();
+    if (resize) {
+      video.currentTime = currentTime;
+    }
+    video.play().catch(error => {
+      console.log("Error playing video:", error);
+    });
+    hasSwitchedToLargeVideo = true;
+    hasSwitchedToSmallVideo = false;
   }
 }
 
@@ -77,34 +77,94 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    checkScreenWidth();
-    window.addEventListener('resize', () => checkScreenWidth(true));
+  checkScreenWidth();
+  window.addEventListener('resize', () => checkScreenWidth(true));
 });
 
-  gsap.from('.header', {
-    delay: 4.7, y: -100, duration: 1, ease: 'power2.out', opacity: 0
+
+let tl = gsap.timeline();
+
+// tl.from('.header', {
+//   y: -100, duration: 1, ease: 'power2.out', opacity: 0
+// }, 4.7);
+// tl.from('.galssmorfism', {
+//   y: -1200, duration: 1, ease: 'power2.out'
+// }, 3.5);
+// tl.from('.hero__container__subtitle', {
+//   duration: 1, ease: 'power', opacity: 0
+// }, 3.6);
+// tl.from('.hero__container__title', {
+//   x: -500, duration: 1.1, ease: '', opacity: 0
+// }, 4);
+// tl.from('.hero__container__text', {
+//   x: -500, duration: 1.2, ease: 'power', opacity: 0
+// }, 4.1);
+// tl.from('.hero__container__button', {
+//   y: 50, duration: 1.6, ease: 'back', opacity: 0
+// }, 4.5);
+// Оптимизация анимаций с использованием ScrollTrigger
+
+// функция для настройки анимаций секций
+function animateSection(sectionSelector, animationProps, delay = 0) {
+  gsap.from(sectionSelector, {
+    scrollTrigger: {
+      trigger: sectionSelector,
+      start: 'top 80%',
+    },
+    ...animationProps,
+    delay,
+  });
+}
+
+// forWhat section animation
+animateSection('.forWhat__container__header', { y: 10, opacity: 0, duration: 0.5 });
+animateSection('.forWhat__container__slider', { y: 10, opacity: 0, duration: 1.5 });
+
+// callToAction sections animation
+animateSection('.callToAction__container div', { y: 10, opacity: 0, stagger: 0.2, duration: 0.5 });
+
+// benefits section animation
+animateSection('.benefits__container__header', { y: 10, opacity: 0, duration: 0.5 });
+animateSection('.benefits__container__cards', { y: 10, opacity: 0, duration: 1.5 });
+
+// progress section animation
+animateSection('.process__container__header', { y: 10, opacity: 0, duration: 0.5 });
+
+const stepsAndRoads = gsap.utils.toArray('.process__container__steps > div');
+
+stepsAndRoads.forEach((element, i) => {
+  const isStep = element.classList.contains('step');
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: element,
+      start: 'top 100%', 
+    },
   });
 
-  gsap.from('.galssmorfism', {
-    delay: 3.5, y: -1200, duration: 1, ease: 'power2.out'
+  tl.from(element, {
+    x: isStep ? -20 : 0,
+    opacity: 0,
+    duration: 0.5,
+    delay: 1 + i * 0.4,
   });
 
-  gsap.from('.hero__container__subtitle', {
-    delay: 3.6, duration: 1, ease: 'power', opacity: 0
-  });
+  if (!isStep) {
+    tl.from([...element.children].reverse(), {
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.2,
+    }, '-=0.7');
+  }
+});
 
-  gsap.from('.hero__container__title', {
-    delay: 4, x: -500, duration: 1.1, ease: '', opacity: 0
-  });
+// reviews section animation
+animateSection('.reviews__container__header', { y: 10, opacity: 0, duration: 0.5 });
+animateSection('.reviews__container__slider', { y: 10, opacity: 0, duration: 1 });
 
-  gsap.from('.hero__container__text', {
-    delay: 4.1, x: -500, duration: 1.2, ease: 'power', opacity: 0
-  });
-
-  gsap.from('.hero__container__button', {
-    delay: 4.5, y: 50, duration: 1.6, ease: 'back', opacity: 0
-  });
-
+// contact section animation
+animateSection('.contacts__container h2', { y: 10, opacity: 0, stagger: 0.2, duration: 0.5 });
+animateSection('.contacts__container div', { y: 10, opacity: 0, stagger: 0.2, duration: 1 });
 
 
 
@@ -123,9 +183,9 @@ const sliderBg = [
 function setBackgroundImages() {
   const slides = document.querySelectorAll('.slide');
   slides.forEach((slide, index) => {
-      if (index < sliderBg.length) {
-          slide.style.backgroundImage = `url(${sliderBg[index]})`;
-      }
+    if (index < sliderBg.length) {
+      slide.style.backgroundImage = `url(${sliderBg[index]})`;
+    }
   });
 }
 
@@ -141,27 +201,27 @@ document.addEventListener('DOMContentLoaded', () => {
       indicatorText: ''
     });
     const hammer = new Hammer(__ms);
-    const __msTimer = 20000;
+    const __msTimer = 10000;
     let __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
 
-    __ms.onmouseenter = function(e) {
+    __ms.onmouseenter = function (e) {
       clearInterval(__msAutoplay);
     }
 
-    __ms.onmouseleave = function(e) {
+    __ms.onmouseleave = function (e) {
       clearInterval(__msAutoplay);
       __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
     }
 
-    __ms.onclick = function(e) {
+    __ms.onclick = function (e) {
       clearInterval(__msAutoplay);
     }
 
-    hammer.on('tap', function(e) {
+    hammer.on('tap', function (e) {
       clearInterval(__msAutoplay);
     });
 
-    hammer.on('swipe', function(e) {
+    hammer.on('swipe', function (e) {
       clearInterval(__msAutoplay);
       __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
     });
@@ -217,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       menu.style.opacity = '1';
-      menu.style.top = '0'; 
+      menu.style.top = '0';
     }, 50);
   });
 
@@ -227,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
       const targetId = link.getAttribute('href');
-      
+
       closeMenu();
 
       setTimeout(() => {
@@ -238,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.container');
   const cards = document.querySelectorAll('.card');
   const totalCards = cards.length;
@@ -286,18 +346,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   window.addEventListener('resize', updateSlider);
-  updateSlider(); 
+  updateSlider();
 });
 
 
-     
+
 // ------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const cardsContainer = document.querySelector('.benefits__container__cards');
   const cards = document.querySelectorAll('.benefits__container__cards__card');
   const btnPrev = document.querySelector('.benefits__container__header__sliderBtn .btnPrev');
   const btnNext = document.querySelector('.benefits__container__header__sliderBtn .btnNext');
-  
+
   let currentIndex = 0;
 
   function showCard(index) {
@@ -318,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cards.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.classList.add('dot');
-      if(i === 0) dot.classList.add('active');
+      if (i === 0) dot.classList.add('active');
       dot.addEventListener('click', function () {
         currentIndex = i;
         showCard(currentIndex);
@@ -349,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleResize() {
     if (cardsContainer.clientWidth < 500) {
       showCard(currentIndex);
-      if(!cardsContainer.contains(cardsContainer.querySelector('.pagination'))) {
+      if (!cardsContainer.contains(cardsContainer.querySelector('.pagination'))) {
         createPaginationDots();
       }
     } else {
@@ -380,19 +440,19 @@ let currentSlide = 0;
 function animateIn(slide) {
   const video = slide.querySelector('video');
   const content = slide.querySelector('.slide__content');
-  const slideInfo = document.querySelectorAll('.slideInfo'); 
+  const slideInfo = document.querySelectorAll('.slideInfo');
   const points = document.querySelectorAll('.points');
 
   gsap.fromTo(video, { opacity: 0 }, { opacity: 1, duration: 1 });
-  gsap.fromTo(content, { x: '100%', opacity: 0 }, { x: '0%', opacity: 1, duration: 1, delay: 1.3});
-  gsap.fromTo(slideInfo, { opacity: 0}, { opacity: 1, delay: 1.7, duration: 1, stagger: .2 });
-  gsap.fromTo(points, { opacity: 0}, { opacity: 1, duration: .7, delay: 3.5 }); 
+  gsap.fromTo(content, { x: '100%', opacity: 0 }, { x: '0%', opacity: 1, duration: 1, delay: 1.3 });
+  gsap.fromTo(slideInfo, { opacity: 0 }, { opacity: 1, delay: 1.7, duration: 1, stagger: .2 });
+  gsap.fromTo(points, { opacity: 0 }, { opacity: 1, duration: .7, delay: 3.5 });
 }
 
 function animateOut(slide, callback) {
   const video = slide.querySelector('video');
   const content = slide.querySelector('.slide__content');
-  const slideInfo = document.querySelectorAll('.slideInfo'); 
+  const slideInfo = document.querySelectorAll('.slideInfo');
   const points = document.querySelectorAll('.points');
 
 
@@ -409,7 +469,7 @@ function showSlide(index) {
     index = slides.length - 1;
   }
 
-  const newSlide = slides[index]; 
+  const newSlide = slides[index];
   const oldSlide = slides[currentSlide];
 
   if (newSlide !== oldSlide) {
