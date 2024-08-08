@@ -65,6 +65,11 @@
         width: 375px;
         padding: 50px;
         color: $textGray;
+        transition: all $transitionDuration ease;
+
+        &:hover {
+          box-shadow: 3px 3px 30px rgba(10, 18, 112, 0.34);
+        }
 
         .cardHeader {
           display: flex;

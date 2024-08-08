@@ -753,6 +753,10 @@ h6 {
   width: 375px;
   padding: 50px;
   color: rgb(102, 112, 133);
+  transition: all 0.3s ease;
+}
+.benefits__container__cards__card:hover {
+  box-shadow: 3px 3px 30px rgba(10, 18, 112, 0.34);
 }
 .benefits__container__cards__card .cardHeader {
   display: flex;
