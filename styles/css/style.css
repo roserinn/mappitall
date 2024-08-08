@@ -1829,9 +1829,9 @@ body {
   opacity: 0;
   display: none;
   transition: all 0.5s ease;
-  padding: 80px 200px 80px 80px;
 }
 .menu__container {
+  padding: 80px 200px 80px 80px;
   width: 500px;
   margin: 0 auto;
   position: relative;
@@ -1883,10 +1883,8 @@ body {
 }
 
 @media (max-width: 501px) {
-  .menu {
-    padding: 80px 200px 80px 50px;
-  }
   .menu__container {
+    padding: 80px 200px 80px 40px;
     width: 350px;
   }
   .menu__container__close {
