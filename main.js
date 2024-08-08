@@ -199,6 +199,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.menu');
   const body = document.querySelector('body');
   const close = document.querySelector('.menu__container__close');
+  const menuLinks = document.querySelectorAll('.menu__container__list a');
+
+  const closeMenu = () => {
+    body.style.overflow = 'scroll';
+    menu.style.opacity = '0';
+    menu.style.top = '-100%';
+
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 500);
+  };
 
   burger.addEventListener('click', () => {
     body.style.overflow = 'hidden';
@@ -210,16 +221,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   });
 
-  close.addEventListener('click', () => {
-    body.style.overflow = 'scroll';
-    menu.style.opacity = '0';
-    menu.style.top = '-100%'; 
+  close.addEventListener('click', closeMenu);
 
-    setTimeout(() => {
-      menu.style.display = 'none';
-    }, 500); 
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = link.getAttribute('href');
+      
+      closeMenu();
+
+      setTimeout(() => {
+        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+      }, 500); // Время закрытия меню должно совпадать с временем setTimeout выше
+    });
   });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.querySelector('.container');
