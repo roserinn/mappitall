@@ -86,22 +86,22 @@ let tl = gsap.timeline();
 
 tl.from('.header', {
   y: -100, duration: 1, ease: 'power2.out', opacity: 0
-}, 4.3);
+}, 3.4);
 tl.from('.galssmorfism', {
   y: -1200, duration: 1, ease: 'power2.out'
-}, 3);
+}, 2);
 tl.from('.hero__container__subtitle', {
   duration: 1, ease: 'power', opacity: 0
-}, 3.2);
+}, 2.2);
 tl.from('.hero__container__title', {
   x: -500, duration: 1.1, ease: '', opacity: 0
-}, 3.4);
+}, 2.4);
 tl.from('.hero__container__text', {
   x: -500, duration: 1.2, ease: 'power', opacity: 0
-}, 3.7);
+}, 2.7);
 tl.from('.hero__container__button', {
   y: 50, duration: 1.6, ease: 'back', opacity: 0
-}, 4);
+}, 3);
 
 function animateSection(sectionSelector, animationProps, delay = 0) {
   gsap.from(sectionSelector, {
