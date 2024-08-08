@@ -1829,7 +1829,7 @@ body {
   opacity: 0;
   display: none;
   transition: all 0.5s ease;
-  padding: 50px;
+  padding: 100px 0;
 }
 .menu__container {
   width: 500px;
@@ -1883,9 +1883,6 @@ body {
 }
 
 @media (max-width: 501px) {
-  .menu {
-    padding: 100px 0;
-  }
   .menu__container {
     width: 350px;
   }

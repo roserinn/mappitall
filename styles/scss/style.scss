@@ -48,8 +48,7 @@ body {
   opacity: 0;
   display: none;
   transition: all .5s ease;
-  padding: 50px;
- 
+  padding: 100px 0;
 
   &__container {
     // padding: 80px 200px 80px 80px;
@@ -118,10 +117,9 @@ body {
 @include mobile() {
 
   .menu {
-  padding: 100px 0;
+
 
     &__container { 
-      // padding: 80px 200px 80px 40px;
       width: 350px;
 
       &__close {
