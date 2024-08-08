@@ -84,27 +84,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 let tl = gsap.timeline();
 
-// tl.from('.header', {
-//   y: -100, duration: 1, ease: 'power2.out', opacity: 0
-// }, 4.7);
-// tl.from('.galssmorfism', {
-//   y: -1200, duration: 1, ease: 'power2.out'
-// }, 3.5);
-// tl.from('.hero__container__subtitle', {
-//   duration: 1, ease: 'power', opacity: 0
-// }, 3.6);
-// tl.from('.hero__container__title', {
-//   x: -500, duration: 1.1, ease: '', opacity: 0
-// }, 4);
-// tl.from('.hero__container__text', {
-//   x: -500, duration: 1.2, ease: 'power', opacity: 0
-// }, 4.1);
-// tl.from('.hero__container__button', {
-//   y: 50, duration: 1.6, ease: 'back', opacity: 0
-// }, 4.5);
-// Оптимизация анимаций с использованием ScrollTrigger
+tl.from('.header', {
+  y: -100, duration: 1, ease: 'power2.out', opacity: 0
+}, 4.7);
+tl.from('.galssmorfism', {
+  y: -1200, duration: 1, ease: 'power2.out'
+}, 3.5);
+tl.from('.hero__container__subtitle', {
+  duration: 1, ease: 'power', opacity: 0
+}, 3.6);
+tl.from('.hero__container__title', {
+  x: -500, duration: 1.1, ease: '', opacity: 0
+}, 4);
+tl.from('.hero__container__text', {
+  x: -500, duration: 1.2, ease: 'power', opacity: 0
+}, 4.1);
+tl.from('.hero__container__button', {
+  y: 50, duration: 1.6, ease: 'back', opacity: 0
+}, 4.5);
 
-// функция для настройки анимаций секций
 function animateSection(sectionSelector, animationProps, delay = 0) {
   gsap.from(sectionSelector, {
     scrollTrigger: {
@@ -115,6 +113,7 @@ function animateSection(sectionSelector, animationProps, delay = 0) {
     delay,
   });
 }
+
 
 // forWhat section animation
 animateSection('.forWhat__container__header', { y: 10, opacity: 0, duration: 0.5 });
@@ -129,6 +128,7 @@ animateSection('.benefits__container__cards', { y: 10, opacity: 0, duration: 1.5
 
 // progress section animation
 animateSection('.process__container__header', { y: 10, opacity: 0, duration: 0.5 });
+
 
 const stepsAndRoads = gsap.utils.toArray('.process__container__steps > div');
 
@@ -145,8 +145,8 @@ stepsAndRoads.forEach((element, i) => {
   tl.from(element, {
     x: isStep ? -20 : 0,
     opacity: 0,
-    duration: 0.5,
-    delay: 1 + i * 0.4,
+    duration: 0.4,
+    delay: 1 + i * 0.6,
   });
 
   if (!isStep) {
@@ -154,7 +154,7 @@ stepsAndRoads.forEach((element, i) => {
       opacity: 0,
       stagger: 0.1,
       duration: 0.2,
-    }, '-=0.7');
+    }, '-=0.3');
   }
 });
 

@@ -840,7 +840,7 @@ h6 {
 @media (max-width: 501px) {
   .benefits__container {
     width: 350px;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   .benefits__container__header {
     margin: 0 auto 30px;
@@ -1271,7 +1271,7 @@ h6 {
 }
 @media (max-width: 501px) {
   .process__container {
-    margin: 20px auto;
+    margin: 100px auto;
     width: 350px;
   }
   .process__container span {
@@ -1884,12 +1884,13 @@ body {
 
 @media (max-width: 501px) {
   .menu {
-    padding: 50px;
+    padding: 80px 200px 80px 50px;
   }
   .menu__container {
     width: 350px;
   }
   .menu__container__close {
     top: -30px;
+    right: 30px;
   }
 }/*# sourceMappingURL=style.css.map */

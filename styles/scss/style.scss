@@ -116,13 +116,14 @@ body {
 @include mobile() {
 
   .menu {
-    padding: 50px;
+    padding: 80px 200px 80px 50px;
 
     &__container {
       width: 350px;
 
       &__close {
         top: -30px;
+        right: 30px;
       }
     }
   }
