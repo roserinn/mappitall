@@ -1,3 +1,4 @@
+//communication button
 document.addEventListener('DOMContentLoaded', function () {
   const pulseButtonContainer = document.querySelector('.pulseButton');
   const firstSection = document.querySelector('.hero');
@@ -15,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleButtonVisibility();
 });
 
-
-
+//main video
 let hasSwitchedToSmallVideo = false;
 let hasSwitchedToLargeVideo = false;
 
@@ -55,7 +55,6 @@ function checkScreenWidth(resize = false) {
 }
 
 // pulse button 
-
 document.addEventListener('DOMContentLoaded', function () {
   const pulseButtonContainer = document.querySelector('.pulseButton');
   const sections = document.querySelector('.hero');
@@ -80,6 +79,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+
+//landing animation
 let tl = gsap.timeline();
 
 tl.from('.header', {
@@ -105,37 +106,31 @@ function animateSection(sectionSelector, animationProps, delay = 0) {
   gsap.from(sectionSelector, {
     scrollTrigger: {
       trigger: sectionSelector,
-      start: 'top 80%',
+      start: 'top 60%',
     },
     ...animationProps,
     delay,
   });
 }
 
-// forWhat section animation
 animateSection('.forWhat__container__header', { y: 10, opacity: 0, duration: 0.5 });
 animateSection('.forWhat__container__slider', { y: 10, opacity: 0, duration: 1.5 });
 
-// callToAction sections animation
-animateSection('.callToAction__container div', { y: 10, opacity: 0, stagger: 0.2, duration: 0.5 });
+animateSection('.first .callToAction__container div', { y: 10, opacity: 0, stagger: 0.2, duration: 0.5 });
 
-// benefits section animation
 animateSection('.benefits__container__header', { y: 10, opacity: 0, duration: 0.5 });
 animateSection('.benefits__container__cards', { y: 10, opacity: 0, duration: 1.5 });
 
-// progress section animation
 animateSection('.process__container__header', { y: 10, opacity: 0, duration: 0.5 });
-
 
 const stepsAndRoads = gsap.utils.toArray('.process__container__steps > div');
 
 stepsAndRoads.forEach((element, i) => {
   const isStep = element.classList.contains('step');
-
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: element,
-      start: 'top 100%', 
+      start: 'top 60%', 
     },
   });
 
@@ -155,16 +150,16 @@ stepsAndRoads.forEach((element, i) => {
   }
 });
 
-// reviews section animation
+animateSection('.second .callToAction__container div', { y: 10, opacity: 0, stagger: 0.2, duration: 0.5 });
+
 animateSection('.reviews__container__header', { y: 10, opacity: 0, duration: 0.5 });
 animateSection('.reviews__container__slider', { y: 10, opacity: 0, duration: 1 });
 
-// contact section animation
 animateSection('.contacts__container h2', { y: 10, opacity: 0, stagger: 0.2, duration: 0.5 });
 animateSection('.contacts__container div', { y: 10, opacity: 0, stagger: 0.2, duration: 1 });
 
 
-
+//slides background images
 const sliderBg = [
   './assets/img/sectonImg/slider/1.png',
   './assets/img/sectonImg/slider/2.png',
@@ -189,6 +184,8 @@ function setBackgroundImages() {
 setBackgroundImages();
 
 
+
+//for what section slider
 document.addEventListener('DOMContentLoaded', () => {
 
   function initializeSlider() {
@@ -274,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+//mobile burger menu
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.header__container__menu');
   const menu = document.querySelector('.menu');
@@ -312,12 +310,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-      }, 500); // Время закрытия меню должно совпадать с временем setTimeout выше
+      }, 500); 
     });
   });
 });
 
 
+//reviews slider
 document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.container');
   const cards = document.querySelectorAll('.card');
@@ -370,8 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-// ------------------------------
+//benefits slider
 document.addEventListener('DOMContentLoaded', function () {
   const cardsContainer = document.querySelector('.benefits__container__cards');
   const cards = document.querySelectorAll('.benefits__container__cards__card');
@@ -453,10 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
   handleResize();
 });
 
-
-////////////////////////////////////////////////////
-
-
+//cases slider
 const slides = document.querySelectorAll('.casesSlide');
 const nextBtn = document.querySelectorAll('.next-slide');
 const prevBtn = document.querySelectorAll('.prev-slide');

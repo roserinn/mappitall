@@ -1,6 +1,3 @@
-
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ variables ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
-
 // z-index system 
 $ui-index-1: 1; //for crawling elements in the total flow
 $ui-index-2: 2; //for crawling elements in the total flow
@@ -14,7 +11,7 @@ $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
 $gray: rgb(152, 162, 179);
 $textGray: rgb(102, 112, 133);
-$darkGray: #484848;
+$darkGray: rgb(72, 72, 72);
 $green: rgb(0, 128, 0);
 $yellow: rgb(219, 179, 0);
 $lightGray: rgb(233, 234, 236);
@@ -23,7 +20,6 @@ $brandColor: rgb(8, 21, 55);
 $brandColorLight: rgb(54, 59, 90);
 
 // ----------------------------------------------------------------------------------------------------------------------
-
 // other
 $borderRadius: 30px;
 $transitionDuration:  .3s;
@@ -33,7 +29,6 @@ $fontWeightBold: 600;
 $fontWeightLight: 200;
  
 // ----------------------------------------------------------------------------------------------------------------------
-
 // @media  
 $ui-mobile:  '501px';
 $ui-tablet: '1000px';

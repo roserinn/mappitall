@@ -1,9 +1,7 @@
 .hero {
-  background-color: rgb(9, 9, 9);
   height: 100vh;
   position: relative;
   overflow-y: hidden;
-
 
   video {
     width: 100%;
@@ -15,7 +13,6 @@
   }
 
   .shadow {
-    background: rgb(34, 193, 195);
     background: -moz-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588184158) 51%, rgba(0, 0, 0, 1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588184158) 51%, rgba(0, 0, 0, 1) 100%);
     background: linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588184158) 51%, rgba(0, 0, 0, 1) 100%);

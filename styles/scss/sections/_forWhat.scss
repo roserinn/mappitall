@@ -39,7 +39,7 @@
           border-radius: 50px;
 
           img {
-            width: 25px;
+            width: 20px;
           }
 
           &:hover {
@@ -112,9 +112,9 @@
 }
 
 .indicators a {
-  background-color: #98A2B3;
+  background-color: $gray;
   border-radius: 8px;
-  color: #98A2B3;
+  color: $gray;
   display: inline-block;
   height: 10px;
   width: 10px;
@@ -125,73 +125,8 @@
   border: 1px solid $brandColor;
 }
 
-.pulseButton__container {
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  z-index: $ui-index-6;
-
-
-  .pulseButton {
-    background: #717BBC;
-    cursor: pointer;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    transition: all $transitionDuration ease;
-
-    img {
-      width: 37px
-    }
-
-    ;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      transform: translate(-50%, -50%);
-      background: rgba(113, 123, 188, 0.33);
-      animation: pulse 3s infinite;
-      z-index: -1;
-    }
-
-    &::after {
-      animation-delay: 1s;
-    }
-
-    &:hover {
-      background: #6776d4;
-      transform: scale(1.1);
-    }
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0;
-  }
-}
-
-
 @include laptop() {
   .forWhat {
-
     &__container {
       &__header {
         width: 1000px;
@@ -215,7 +150,6 @@
 
 @include tablet() {
   .forWhat {
-
     &__container {
       &__header {
         width: 500px;
@@ -304,23 +238,6 @@
           }
         }
       }
-    }
-  }
-
-  .pulseButton__container {
-    bottom: 20px;
-    right: 20px;
-
-    .pulseButton {
-      width: 50px;
-      height: 50px;
-
-      img {
-        width: 25px
-      }
-
-      ;
-
     }
   }
 }

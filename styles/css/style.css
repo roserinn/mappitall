@@ -184,7 +184,6 @@ h6 {
   }
 }
 .hero {
-  background-color: rgb(9, 9, 9);
   height: 100vh;
   position: relative;
   overflow-y: hidden;
@@ -198,7 +197,6 @@ h6 {
   left: 0;
 }
 .hero .shadow {
-  background: rgb(34, 193, 195);
   background: -moz-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588) 51%, rgb(0, 0, 0) 100%);
   background: -webkit-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588) 51%, rgb(0, 0, 0) 100%);
   background: linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(0, 0, 0, 0.5647451588) 51%, rgb(0, 0, 0) 100%);
@@ -346,7 +344,7 @@ h6 {
 }
 .forWhat__container__header span {
   text-transform: uppercase;
-  color: rgb(152, 162, 179);
+  color: rgb(153, 162, 179);
 }
 .forWhat__container__header h2 {
   font-size: 3rem;
@@ -369,7 +367,7 @@ h6 {
   border-radius: 50px;
 }
 .forWhat__container__header__sliderBtn button img {
-  width: 25px;
+  width: 20px;
 }
 .forWhat__container__header__sliderBtn button:hover {
   background-color: rgb(8, 21, 55);
@@ -441,48 +439,6 @@ h6 {
 .indicators .active a {
   background: rgb(8, 21, 55);
   border: 1px solid rgb(8, 21, 55);
-}
-
-.pulseButton__container {
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  z-index: 6;
-}
-.pulseButton__container .pulseButton {
-  background: #717BBC;
-  cursor: pointer;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-.pulseButton__container .pulseButton img {
-  width: 37px;
-}
-.pulseButton__container .pulseButton::before, .pulseButton__container .pulseButton::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  background: rgba(113, 123, 188, 0.33);
-  animation: pulse 3s infinite;
-  z-index: -1;
-}
-.pulseButton__container .pulseButton::after {
-  animation-delay: 1s;
-}
-.pulseButton__container .pulseButton:hover {
-  background: #6776d4;
-  transform: scale(1.1);
 }
 
 @keyframes pulse {
@@ -574,17 +530,6 @@ h6 {
     font-size: 0.9rem;
     line-height: 17px;
     margin-bottom: 5px;
-  }
-  .pulseButton__container {
-    bottom: 20px;
-    right: 20px;
-  }
-  .pulseButton__container .pulseButton {
-    width: 50px;
-    height: 50px;
-  }
-  .pulseButton__container .pulseButton img {
-    width: 25px;
   }
 }
 .callToAction {
@@ -709,7 +654,7 @@ h6 {
 }
 .benefits__container__header span {
   text-transform: uppercase;
-  color: rgb(152, 162, 179);
+  color: rgb(153, 162, 179);
 }
 .benefits__container__header h2 {
   font-size: 3rem;
@@ -904,7 +849,7 @@ h6 {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgb(152, 162, 179);
+    background-color: rgb(153, 162, 179);
     margin: 0 5px;
     cursor: pointer;
   }
@@ -925,7 +870,7 @@ h6 {
 }
 .cases__container__header span {
   text-transform: uppercase;
-  color: rgb(152, 162, 179);
+  color: rgb(153, 162, 179);
 }
 .cases__container__header h2 {
   font-size: 3rem;
@@ -1168,7 +1113,7 @@ h6 {
 }
 .process__container__header span {
   text-transform: uppercase;
-  color: rgb(152, 162, 179);
+  color: rgb(153, 162, 179);
 }
 .process__container__header h2 {
   font-size: 3rem;
@@ -1317,7 +1262,7 @@ h6 {
 }
 .reviews__container__header span {
   text-transform: uppercase;
-  color: rgb(152, 162, 179);
+  color: rgb(153, 162, 179);
 }
 .reviews__container__header h2 {
   font-size: 3rem;
@@ -1340,7 +1285,7 @@ h6 {
   border-radius: 50px;
 }
 .reviews__container__header__sliderBtn button img {
-  width: 25px;
+  width: 20px;
 }
 .reviews__container__header__sliderBtn button:hover {
   background-color: rgb(8, 21, 55);
@@ -1393,7 +1338,7 @@ h6 {
   color: rgb(219, 179, 0);
 }
 .reviews__container__slider .container .card__container__rating .date {
-  color: #484848;
+  color: rgb(72, 72, 72);
 }
 .reviews__container__slider .container .card__container__review {
   font-style: italic;
@@ -1424,7 +1369,7 @@ h6 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #98A2B3;
+  background-color: rgb(152, 162, 179);
   cursor: pointer;
 }
 .reviews__container__slider .points .active {
@@ -1493,13 +1438,6 @@ h6 {
     display: flex;
     align-items: center;
     gap: 20px;
-  }
-  .reviews__container__slider .container .card__container__rating .stars {
-    color: rgb(219, 179, 0);
-  }
-  .reviews__container__slider .container .card__container__rating .date {
-    font-size: 0.7rem;
-    color: gray;
   }
   .reviews__container__slider .container .card__container__review {
     font-size: 0.8rem;
@@ -1893,5 +1831,60 @@ body {
   .menu__container__close {
     top: -30px;
     right: 30px;
+  }
+}
+.pulseButton__container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 6;
+}
+.pulseButton__container .pulseButton {
+  background: #717BBC;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.pulseButton__container .pulseButton img {
+  width: 37px;
+}
+.pulseButton__container .pulseButton::before, .pulseButton__container .pulseButton::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: rgba(113, 123, 188, 0.33);
+  animation: pulse 3s infinite;
+  z-index: -1;
+}
+.pulseButton__container .pulseButton::after {
+  animation-delay: 1s;
+}
+.pulseButton__container .pulseButton:hover {
+  background: #6776d4;
+  transform: scale(1.1);
+}
+
+@media (max-width: 501px) {
+  .pulseButton__container {
+    bottom: 20px;
+    right: 20px;
+  }
+  .pulseButton__container .pulseButton {
+    width: 50px;
+    height: 50px;
+  }
+  .pulseButton__container .pulseButton img {
+    width: 25px;
   }
 }/*# sourceMappingURL=style.css.map */
