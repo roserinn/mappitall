@@ -232,6 +232,29 @@ document.addEventListener('DOMContentLoaded', () => {
     btnNext.addEventListener('click', () => {
       __msSlider.next();
     });
+    window.addEventListener('resize', () => {
+      handleResize(__msSlider);
+    });
+  
+    handleResize(__msSlider);
+  }
+
+  function handleResize(slider) {
+    const width = window.innerWidth;
+    let itemWidth, itemHeight;
+  
+    if (width > 1000) {
+      itemWidth = 800;
+      itemHeight = 450;
+    } else if (width > 500) {
+      itemWidth = 500;
+      itemHeight = 350;
+    } else {
+      itemWidth = 350;
+      itemHeight = 250;
+    }
+  
+    slider.toggleFullWidth(false, itemWidth, itemHeight);
   }
 
   function onScrollHandler() {

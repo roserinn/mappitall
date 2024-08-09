@@ -242,14 +242,15 @@ h6 {
   font-size: 1.5rem;
 }
 .hero__container__title {
-  font-size: 7rem;
+  font-size: 7.5rem;
   letter-spacing: 0.1rem;
   line-height: 120px;
   font-weight: bold;
   font-family: "Space Grotesk", sans-serif;
+  margin-left: -5px;
 }
 .hero__container__text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 40%;
   line-height: 30px;
   margin-bottom: 80px;
