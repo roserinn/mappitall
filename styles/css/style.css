@@ -344,7 +344,7 @@ h6 {
 }
 .forWhat__container__header span {
   text-transform: uppercase;
-  color: rgb(153, 162, 179);
+  color: rgb(152, 162, 179);
 }
 .forWhat__container__header h2 {
   font-size: 3rem;
@@ -428,9 +428,9 @@ h6 {
 }
 
 .indicators a {
-  background-color: #98A2B3;
+  background-color: rgb(152, 162, 179);
   border-radius: 8px;
-  color: #98A2B3;
+  color: rgb(152, 162, 179);
   display: inline-block;
   height: 10px;
   width: 10px;
@@ -441,16 +441,6 @@ h6 {
   border: 1px solid rgb(8, 21, 55);
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0;
-  }
-}
 @media (max-width: 1220px) {
   .forWhat__container__header {
     width: 1000px;
@@ -654,7 +644,7 @@ h6 {
 }
 .benefits__container__header span {
   text-transform: uppercase;
-  color: rgb(153, 162, 179);
+  color: rgb(152, 162, 179);
 }
 .benefits__container__header h2 {
   font-size: 3rem;
@@ -849,7 +839,7 @@ h6 {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgb(153, 162, 179);
+    background-color: rgb(152, 162, 179);
     margin: 0 5px;
     cursor: pointer;
   }
@@ -870,7 +860,7 @@ h6 {
 }
 .cases__container__header span {
   text-transform: uppercase;
-  color: rgb(153, 162, 179);
+  color: rgb(152, 162, 179);
 }
 .cases__container__header h2 {
   font-size: 3rem;
@@ -1113,7 +1103,7 @@ h6 {
 }
 .process__container__header span {
   text-transform: uppercase;
-  color: rgb(153, 162, 179);
+  color: rgb(152, 162, 179);
 }
 .process__container__header h2 {
   font-size: 3rem;
@@ -1262,7 +1252,7 @@ h6 {
 }
 .reviews__container__header span {
   text-transform: uppercase;
-  color: rgb(153, 162, 179);
+  color: rgb(152, 162, 179);
 }
 .reviews__container__header h2 {
   font-size: 3rem;
@@ -1875,6 +1865,16 @@ body {
   transform: scale(1.1);
 }
 
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
 @media (max-width: 501px) {
   .pulseButton__container {
     bottom: 20px;
