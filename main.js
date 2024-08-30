@@ -79,13 +79,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-
 //landing animation
 let tl = gsap.timeline();
 
-tl.from('.header', {
-  y: -100, duration: 1, ease: 'power2.out', opacity: 0
-}, 3.4);
 tl.from('.galssmorfism', {
   y: -1200, duration: 1, ease: 'power2.out'
 }, 2);
@@ -123,33 +119,6 @@ animateSection('.benefits__container__cards', { y: 10, opacity: 0, duration: 1.5
 
 animateSection('.process__container__header', { y: 10, opacity: 0, duration: 0.5 });
 
-const stepsAndRoads = gsap.utils.toArray('.process__container__steps > div');
-
-stepsAndRoads.forEach((element, i) => {
-  const isStep = element.classList.contains('step');
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: element,
-      start: 'top 60%', 
-    },
-  });
-
-  tl.from(element, {
-    x: isStep ? -20 : 0,
-    opacity: 0,
-    duration: 0.3,
-    delay: 0.3 + i * 0.3,
-  });
-
-  if (!isStep) {
-    tl.from([...element.children].reverse(), {
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.01,
-    }, '-=0.5');
-  }
-});
-
 animateSection('.second .callToAction__container div', { y: 10, opacity: 0, stagger: 0.2, duration: 0.5 });
 
 animateSection('.reviews__container__header', { y: 10, opacity: 0, duration: 0.5 });
@@ -184,7 +153,6 @@ function setBackgroundImages() {
 setBackgroundImages();
 
 
-
 //for what section slider
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -215,8 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(__msAutoplay);
     });
 
-    hammer.on('swipe', function (e) {
+    hammer.on('swipeleft', function (e) {
       clearInterval(__msAutoplay);
+      __msSlider.next();
+      __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
+    });
+
+    hammer.on('swiperight', function (e) {
+      clearInterval(__msAutoplay);
+      __msSlider.prev();
       __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
     });
 
@@ -271,51 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//mobile burger menu
-document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.querySelector('.header__container__menu');
-  const menu = document.querySelector('.menu');
-  const body = document.querySelector('body');
-  const close = document.querySelector('.menu__container__close');
-  const menuLinks = document.querySelectorAll('.menu__container__list a');
-
-  const closeMenu = () => {
-    body.style.overflow = 'scroll';
-    menu.style.opacity = '0';
-    menu.style.top = '-100%';
-
-    setTimeout(() => {
-      menu.style.display = 'none';
-    }, 500);
-  };
-
-  burger.addEventListener('click', () => {
-    body.style.overflow = 'hidden';
-    menu.style.display = 'block';
-
-    setTimeout(() => {
-      menu.style.opacity = '1';
-      menu.style.top = '0';
-    }, 50);
-  });
-
-  close.addEventListener('click', closeMenu);
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetId = link.getAttribute('href');
-
-      closeMenu();
-
-      setTimeout(() => {
-        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-      }, 500); 
-    });
-  });
-});
-
-
 //reviews slider
 document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.container');
@@ -356,6 +286,16 @@ document.addEventListener('DOMContentLoaded', function () {
     currentIndex = index;
     updateSlider();
   }
+
+  const hammer = new Hammer(container);
+
+  hammer.on('swipeleft', () => {
+    nextSlide();
+  });
+
+  hammer.on('swiperight', () => {
+    prevSlide();
+  });
 
   document.querySelector('.reviews .btnNext').addEventListener('click', nextSlide);
   document.querySelector('.reviews .btnPrev').addEventListener('click', prevSlide);
@@ -424,6 +364,18 @@ document.addEventListener('DOMContentLoaded', function () {
     showCard(currentIndex);
   });
 
+  const hammer = new Hammer(cardsContainer);
+
+  hammer.on('swipeleft', () => {
+    currentIndex = (currentIndex < cards.length - 1) ? currentIndex + 1 : 0;
+    showCard(currentIndex);
+  });
+
+  hammer.on('swiperight', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : cards.length - 1;
+    showCard(currentIndex);
+  });
+
   function handleResize() {
     if (cardsContainer.clientWidth < 500) {
       showCard(currentIndex);
@@ -451,6 +403,7 @@ document.addEventListener('DOMContentLoaded', function () {
   handleResize();
 });
 
+
 //cases slider
 const slides = document.querySelectorAll('.casesSlide');
 const nextBtn = document.querySelectorAll('.next-slide');
@@ -476,7 +429,6 @@ function animateOut(slide, callback) {
   const content = slide.querySelector('.slide__content');
   const slideInfo = document.querySelectorAll('.slideInfo');
   const points = document.querySelectorAll('.points');
-
 
   gsap.to(video, { opacity: 0, duration: 1, onComplete: callback });
   gsap.to(content, { x: '100%', opacity: 0, duration: 1 });
@@ -532,6 +484,17 @@ points.forEach(point => {
     showSlide(index);
   });
 });
+
+const hammer = new Hammer(document.querySelector('.cases-slider-container'));
+
+hammer.on('swipeleft', () => {
+  showSlide(currentSlide + 1);
+});
+
+hammer.on('swiperight', () => {
+  showSlide(currentSlide - 1);
+});
+
 slides.forEach((slide, index) => {
   if (index !== currentSlide) {
     slide.style.display = 'none';
