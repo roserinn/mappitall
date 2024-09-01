@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+
 //landing animation
 let tl = gsap.timeline();
 
@@ -162,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       indicators: true,
       indicatorText: ''
     });
-    const hammer = new Hammer(__ms);
+    const forWhatHammer = new Hammer(__ms);
     const __msTimer = 10000;
     let __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
 
@@ -179,20 +180,18 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(__msAutoplay);
     }
 
-    hammer.on('tap', function (e) {
+    forWhatHammer.on('tap', function (e) {
       clearInterval(__msAutoplay);
     });
 
-    hammer.on('swipeleft', function (e) {
+    forWhatHammer.on('swipeleft', () => {
       clearInterval(__msAutoplay);
       __msSlider.next();
-      __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
     });
 
-    hammer.on('swiperight', function (e) {
+    forWhatHammer.on('swiperight', () => {
       clearInterval(__msAutoplay);
       __msSlider.prev();
-      __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
     });
 
     const btnPrev = document.querySelector('.btnPrev');
@@ -252,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const cards = document.querySelectorAll('.card');
   const totalCards = cards.length;
   const pointsContainer = document.querySelector('.reviews .points');
+  const reviewsHammer = new Hammer(container);
   let currentIndex = 0;
 
   for (let i = 0; i < totalCards; i++) {
@@ -287,19 +287,15 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSlider();
   }
 
-  const hammer = new Hammer(container);
-
-  hammer.on('swipeleft', () => {
+  document.querySelector('.reviews .btnNext').addEventListener('click', nextSlide);
+  document.querySelector('.reviews .btnPrev').addEventListener('click', prevSlide);
+  reviewsHammer.on('swipeleft', () => {
     nextSlide();
   });
 
-  hammer.on('swiperight', () => {
+  reviewsHammer.on('swiperight', () => {
     prevSlide();
   });
-
-  document.querySelector('.reviews .btnNext').addEventListener('click', nextSlide);
-  document.querySelector('.reviews .btnPrev').addEventListener('click', prevSlide);
-
   points.forEach((point, index) => {
     point.addEventListener('click', () => goToSlide(index));
   });
@@ -315,6 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const cards = document.querySelectorAll('.benefits__container__cards__card');
   const btnPrev = document.querySelector('.benefits__container__header__sliderBtn .btnPrev');
   const btnNext = document.querySelector('.benefits__container__header__sliderBtn .btnNext');
+  const benefitsHammer = new Hammer(cardsContainer);
 
   let currentIndex = 0;
 
@@ -364,14 +361,12 @@ document.addEventListener('DOMContentLoaded', function () {
     showCard(currentIndex);
   });
 
-  const hammer = new Hammer(cardsContainer);
-
-  hammer.on('swipeleft', () => {
+  benefitsHammer.on('swipeleft', () => {
     currentIndex = (currentIndex < cards.length - 1) ? currentIndex + 1 : 0;
     showCard(currentIndex);
   });
 
-  hammer.on('swiperight', () => {
+  benefitsHammer.on('swiperight', () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : cards.length - 1;
     showCard(currentIndex);
   });
@@ -403,12 +398,13 @@ document.addEventListener('DOMContentLoaded', function () {
   handleResize();
 });
 
-
 //cases slider
+const casesContainer = document.querySelector('.cases__container__slider');
 const slides = document.querySelectorAll('.casesSlide');
 const nextBtn = document.querySelectorAll('.next-slide');
 const prevBtn = document.querySelectorAll('.prev-slide');
 const points = document.querySelectorAll('.points__item');
+const casesHammer = new Hammer(casesContainer);
 
 let currentSlide = 0;
 
@@ -429,6 +425,7 @@ function animateOut(slide, callback) {
   const content = slide.querySelector('.slide__content');
   const slideInfo = document.querySelectorAll('.slideInfo');
   const points = document.querySelectorAll('.points');
+
 
   gsap.to(video, { opacity: 0, duration: 1, onComplete: callback });
   gsap.to(content, { x: '100%', opacity: 0, duration: 1 });
@@ -484,17 +481,13 @@ points.forEach(point => {
     showSlide(index);
   });
 });
-
-const hammer = new Hammer(document.querySelector('.cases-slider-container'));
-
-hammer.on('swipeleft', () => {
+casesHammer.on('swipeleft', () => {
   showSlide(currentSlide + 1);
 });
 
-hammer.on('swiperight', () => {
-  showSlide(currentSlide - 1);
+casesHammer.on('swiperight', () => {
+    showSlide(currentSlide - 1);
 });
-
 slides.forEach((slide, index) => {
   if (index !== currentSlide) {
     slide.style.display = 'none';
