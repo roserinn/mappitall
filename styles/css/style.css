@@ -1490,7 +1490,7 @@ body {
   transition: all 0.3s ease;
 }
 .pulseButton__container .pulseButton img {
-  width: 37px;
+  width: 40px;
 }
 .pulseButton__container .pulseButton::before, .pulseButton__container .pulseButton::after {
   content: "";
@@ -1533,6 +1533,6 @@ body {
     height: 50px;
   }
   .pulseButton__container .pulseButton img {
-    width: 25px;
+    width: 30px;
   }
 }/*# sourceMappingURL=style.css.map */
