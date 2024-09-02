@@ -1,20 +1,20 @@
-//communication button
-document.addEventListener('DOMContentLoaded', function () {
-  const pulseButtonContainer = document.querySelector('.pulseButton');
-  const firstSection = document.querySelector('.hero');
+// //communication button
+// document.addEventListener('DOMContentLoaded', function () {
+//   const pulseButtonContainer = document.querySelector('.pulseButton');
+//   const firstSection = document.querySelector('.hero');
 
-  function toggleButtonVisibility() {
-    const rect = firstSection.getBoundingClientRect();
-    if (rect.bottom <= 0) {
-      pulseButtonContainer.style.display = 'flex';
-    } else {
-      pulseButtonContainer.style.display = 'none';
-    }
-  }
+//   function toggleButtonVisibility() {
+//     const rect = firstSection.getBoundingClientRect();
+//     if (rect.bottom <= 0) {
+//       pulseButtonContainer.style.display = 'flex';
+//     } else {
+//       pulseButtonContainer.style.display = 'none';
+//     }
+//   }
 
-  window.addEventListener('scroll', toggleButtonVisibility);
-  toggleButtonVisibility();
-});
+//   window.addEventListener('scroll', toggleButtonVisibility);
+//   toggleButtonVisibility();
+// });
 
 //main video
 let hasSwitchedToSmallVideo = false;
