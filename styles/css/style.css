@@ -960,14 +960,14 @@ h6 {
   }
   .cases__container__slider .slide__content h4 {
     font-size: 0.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .cases__container__slider .slide__content .technologies {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .cases__container__slider .slide__content .technologies .technology {
     gap: 2px;
