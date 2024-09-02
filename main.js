@@ -1,20 +1,3 @@
-// //communication button
-// document.addEventListener('DOMContentLoaded', function () {
-//   const pulseButtonContainer = document.querySelector('.pulseButton');
-//   const firstSection = document.querySelector('.hero');
-
-//   function toggleButtonVisibility() {
-//     const rect = firstSection.getBoundingClientRect();
-//     if (rect.bottom <= 0) {
-//       pulseButtonContainer.style.display = 'flex';
-//     } else {
-//       pulseButtonContainer.style.display = 'none';
-//     }
-//   }
-
-//   window.addEventListener('scroll', toggleButtonVisibility);
-//   toggleButtonVisibility();
-// });
 
 //main video
 let hasSwitchedToSmallVideo = false;
@@ -54,23 +37,23 @@ function checkScreenWidth(resize = false) {
   }
 }
 
-// pulse button 
-document.addEventListener('DOMContentLoaded', function () {
-  const pulseButtonContainer = document.querySelector('.pulseButton');
-  const sections = document.querySelector('.hero');
+// // pulse button 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const pulseButtonContainer = document.querySelector('.pulseButton');
+//   const sections = document.querySelector('.hero');
 
-  function checkSection() {
-    let found = true;
-    const rect = sections.getBoundingClientRect();
-    if (rect.top <= 0 && rect.bottom >= 0) {
-      found = false;
-    }
-    pulseButtonContainer.style.display = found ? 'flex' : 'none';
-  }
+//   function checkSection() {
+//     let found = true;
+//     const rect = sections.getBoundingClientRect();
+//     if (rect.top <= 0 && rect.bottom >= 0) {
+//       found = false;
+//     }
+//     pulseButtonContainer.style.display = found ? 'flex' : 'none';
+//   }
 
-  window.addEventListener('scroll', checkSection);
-  checkSection();
-});
+//   window.addEventListener('scroll', checkSection);
+//   checkSection();
+// });
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
