@@ -135,7 +135,7 @@ h6 {
   margin: 0 auto;
   width: 1200px;
   color: rgb(255, 255, 255);
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+  text-shadow: 2px 3px 5px rgb(0, 0, 0);
   transition: font-size 0.3s ease;
 }
 .hero__container__subtitle {
@@ -458,7 +458,7 @@ h6 {
   margin: 0 auto;
   padding: 200px 0;
   color: rgb(255, 255, 255);
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.427);
+  text-shadow: 2px 3px 5px rgb(0, 0, 0);
 }
 .callToAction__container__title {
   font-family: "Space Grotesk", sans-serif;
